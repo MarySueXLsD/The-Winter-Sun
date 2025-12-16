@@ -932,32 +932,63 @@ namespace VisualNovel
                     }
                 }
                 
-                // Determine which slots need to be hidden immediately
-                var slotsToHide = new HashSet<int>();
-                var slotsSourceOfMovement = new HashSet<int>();
-                foreach (var moving in charactersMoving.Values)
-                {
-                    slotsSourceOfMovement.Add(moving.oldSpot);
-                }
+                // Determine which slot INDICES are in use by current dialogue or animations
+                var slotIndicesInUse = new HashSet<int>();
                 
-                for (int spot = 1; spot <= 6; spot++)
+                // Slots used by characters that are staying or entering (find by spot tracking)
+                foreach (var characterSlot in dialogue.CharacterSlots)
                 {
-                    bool usedByCurrentDialogue = dialogue.CharacterSlots.Any(cs => cs.Spot == spot);
-                    bool isExiting = slotsExiting.Contains(spot);
-                    bool isSourceOfMovement = slotsSourceOfMovement.Contains(spot);
+                    string characterPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, characterSlot.CharacterImage);
                     
-                    // Don't hide: slots used by current dialogue, exiting slots (animated), source-of-movement slots (will animate)
-                    if (!usedByCurrentDialogue && !isExiting && !isSourceOfMovement)
+                    // If this character was in previous dialogue, find which slot they're in
+                    bool foundInPrevious = false;
+                    foreach (var slotKvp in _characterSlots)
                     {
-                        slotsToHide.Add(spot);
+                        if (slotKvp.Value.imagePath == characterPath && slotKvp.Value.border.Visibility == Visibility.Visible)
+                        {
+                            slotIndicesInUse.Add(slotKvp.Key);
+                            foundInPrevious = true;
+                            break;
+                        }
+                    }
+                    
+                    // If new character, they'll use the default slot for their spot
+                    if (!foundInPrevious)
+                    {
+                        slotIndicesInUse.Add(characterSlot.Spot - 1);
                     }
                 }
                 
-                // Hide slots that are not in use and not animating
-                foreach (int spot in slotsToHide)
+                // Slots with exiting characters (animating out)
+                foreach (int exitSpot in slotsExiting)
                 {
-                    int slotIndex = spot - 1;
-                    if (slotIndex >= 0 && slotIndex < _characterSlots.Count)
+                    foreach (var slotKvp in _characterSlots)
+                    {
+                        if (slotKvp.Value.spot == exitSpot && slotKvp.Value.border.Visibility == Visibility.Visible)
+                        {
+                            slotIndicesInUse.Add(slotKvp.Key);
+                            break;
+                        }
+                    }
+                }
+                
+                // Slots that are source of movement (will be animating)
+                foreach (var moving in charactersMoving.Values)
+                {
+                    foreach (var slotKvp in _characterSlots)
+                    {
+                        if (slotKvp.Value.spot == moving.oldSpot && slotKvp.Value.border.Visibility == Visibility.Visible)
+                        {
+                            slotIndicesInUse.Add(slotKvp.Key);
+                            break;
+                        }
+                    }
+                }
+                
+                // Hide slots that are not in use
+                for (int slotIndex = 0; slotIndex < _characterSlots.Count; slotIndex++)
+                {
+                    if (!slotIndicesInUse.Contains(slotIndex))
                     {
                         _characterSlots[slotIndex].border.Visibility = Visibility.Collapsed;
                     }
@@ -1015,7 +1046,19 @@ namespace VisualNovel
                     // Skip if this character is moving (handled above)
                     if (charactersMoving.ContainsKey(characterPath)) continue;
                     
-                    int slotIndex = characterSlot.Spot - 1;
+                    // Find which slot this character is in (may not be spot-1 after previous movements)
+                    int? foundSlotIndex = null;
+                    foreach (var slotKvp in _characterSlots)
+                    {
+                        if (slotKvp.Value.imagePath == characterPath && slotKvp.Value.border.Visibility == Visibility.Visible)
+                        {
+                            foundSlotIndex = slotKvp.Key;
+                            break;
+                        }
+                    }
+                    
+                    // Use found slot or default to spot-1 for new characters
+                    int slotIndex = foundSlotIndex ?? (characterSlot.Spot - 1);
                     if (slotIndex < 0 || slotIndex >= _characterSlots.Count) continue;
                     
                     var uiSlot = _characterSlots[slotIndex];
@@ -1279,26 +1322,37 @@ namespace VisualNovel
                     string imagePath = slot.CharacterImage.ToLower();
                     
                     // Match character name patterns with image path patterns
+                    // Player/MC character - "You", "Вы", "Ви", "Ty"
                     if ((imagePath.Contains("mc") || imagePath.Contains("player")) && 
-                        (characterName.Contains("player") || characterName.Contains("main") || characterName.Contains("traveler")))
+                        (characterName.Contains("player") || characterName.Contains("you") || characterName.Contains("main") || 
+                         characterName.Contains("traveler") || characterName.Contains("вы") || characterName.Contains("ви") || 
+                         characterName.Contains("ty") || characterName.Contains("странник") || characterName.Contains("мандрівник") || 
+                         characterName.Contains("wędrowiec")))
                     {
                         speakingSpot = slot.Spot;
                         break;
                     }
+                    // Girl/Ada character - match by image path "girl" and various name translations
                     else if (imagePath.Contains("girl") && 
-                             (characterName.Contains("girl") || characterName.Contains("agata") || characterName.Contains("daughter")))
+                             (characterName.Contains("girl") || characterName.Contains("ada") || characterName.Contains("ада") ||
+                              characterName.Contains("agata") || characterName.Contains("daughter") || characterName.Contains("córka")))
                     {
                         speakingSpot = slot.Spot;
                         break;
                     }
+                    // Mother character - match by image path "mother" and various name translations
                     else if (imagePath.Contains("mother") && 
-                             (characterName.Contains("mother") || characterName.Contains("mom") || characterName.Contains("parent")))
+                             (characterName.Contains("mother") || characterName.Contains("mom") || characterName.Contains("parent") ||
+                              characterName.Contains("мать") || characterName.Contains("мати") || characterName.Contains("matka") ||
+                              characterName.Contains("mama")))
                     {
                         speakingSpot = slot.Spot;
                         break;
                     }
+                    // Village Chief/Doc character - "Village Chief", "Староста деревни", "Сільський староста", "Sołtys"
                     else if ((imagePath.Contains("doc") || imagePath.Contains("chief") || imagePath.Contains("village")) && 
-                             (characterName.Contains("chief") || characterName.Contains("village") || characterName.Contains("doctor")))
+                             (characterName.Contains("chief") || characterName.Contains("village") || characterName.Contains("doctor") ||
+                              characterName.Contains("староста") || characterName.Contains("sołtys") || characterName.Contains("wójt")))
                     {
                         speakingSpot = slot.Spot;
                         break;

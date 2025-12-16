@@ -59,10 +59,10 @@ C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Vis
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.AssemblyInfoInputs.cache
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.AssemblyInfo.cs
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.csproj.CoreCompileInputs.cache
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.sourcelink.json
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNo.FFE31540.Up2Date
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.dll
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\refint\VisualNovel.dll
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.pdb
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.genruntimeconfig.cache
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\ref\VisualNovel.dll
-C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.sourcelink.json

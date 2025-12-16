@@ -45,6 +45,13 @@ namespace VisualNovel.Scenes
                 nameKey: "Scene1_Character_VillageChief",
                 normalImage: "Assets/Images/Characters/doc.png"
             );
+            
+            // Narrator (no image - for narration text)
+            RegisterCharacter(
+                id: "Narrator",
+                nameKey: "Scene1_Character_Narrator",
+                normalImage: ""
+            );
         }
 
         public override string SceneId => "Scene1";
@@ -54,16 +61,23 @@ namespace VisualNovel.Scenes
         {
             var dialogues = new List<DialogueLine>();
             
-            // Introduction - winter sun description (no characters, just text)
-            dialogues.Add(CreateTextOnlyDialogue("Scene1_Introduction_WinterSun"));
+            // Introduction - winter sun description
+            dialogues.Add(CreateDialogue(
+                characterId: "Narrator",
+                textKey: "Scene1_Introduction_WinterSun"
+            ));
             
             // Background changes to distant view of village
-            dialogues.Add(CreateTextOnlyDialogue("Scene1_VillageAppears", "Assets/Images/Scenes/village.png"));
+            dialogues.Add(CreateDialogue(
+                characterId: "Narrator",
+                textKey: "Scene1_VillageAppears",
+                backgroundImage: "Assets/Images/Scenes/village.png"
+            ));
             
             // Text about journey and chains
             // Main character appears from left on spot 1
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_JourneyText_1",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
@@ -72,7 +86,7 @@ namespace VisualNovel.Scenes
                 cameraZoom: 1.0
             ));
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_ChainsText",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
@@ -81,7 +95,7 @@ namespace VisualNovel.Scenes
                 cameraZoom: 1.0
             ));
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_CurseText",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
@@ -295,7 +309,7 @@ namespace VisualNovel.Scenes
             ));
             
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_GirlApproaches",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
@@ -327,8 +341,6 @@ namespace VisualNovel.Scenes
                 cameraZoom: 1.0
             ));
             
-            dialogues.Add(CreateTextOnlyDialogue("Scene1_GirlWithCat_Context"));
-            
             // Mother dialogue
             dialogues.Add(CreateDialogue(
                 characterId: "Mother",
@@ -337,9 +349,9 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                spot5: "GirlWithCat",
-                spot5Facing: "Right",
-                spot5Mood: CharacterMood.Sad,
+                spot4: "GirlWithCat",
+                spot4Facing: "Right",
+                spot4Mood: CharacterMood.Sad,
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,

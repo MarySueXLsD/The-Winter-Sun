@@ -205,6 +205,7 @@ namespace VisualNovel.Services
                 { "Scene1_Character_GirlWithCat", "Ada" },
                 { "Scene1_Character_Mother", "Mother" },
                 { "Scene1_Character_VillageChief", "Village Chief" },
+                { "Scene1_Character_Narrator", "Narrator" },
                 
                 // Introduction
                 { "Scene1_Introduction_WinterSun", "*introduction with a description of the winter sun*" },
@@ -400,6 +401,7 @@ namespace VisualNovel.Services
                 { "Scene1_Character_GirlWithCat", "Ада" },
                 { "Scene1_Character_Mother", "Мать" },
                 { "Scene1_Character_VillageChief", "Староста деревни" },
+                { "Scene1_Character_Narrator", "Рассказчик" },
                 
                 // Introduction
                 { "Scene1_Introduction_WinterSun", "*вступление с описанием зимнего солнца*" },
@@ -595,6 +597,7 @@ namespace VisualNovel.Services
                 { "Scene1_Character_GirlWithCat", "Ада" },
                 { "Scene1_Character_Mother", "Мати" },
                 { "Scene1_Character_VillageChief", "Сільський староста" },
+                { "Scene1_Character_Narrator", "Оповідач" },
                 
                 // Introduction
                 { "Scene1_Introduction_WinterSun", "*вступ з описом зимового сонця*" },
@@ -790,6 +793,7 @@ namespace VisualNovel.Services
                 { "Scene1_Character_GirlWithCat", "Ada" },
                 { "Scene1_Character_Mother", "Matka" },
                 { "Scene1_Character_VillageChief", "Sołtys" },
+                { "Scene1_Character_Narrator", "Narrator" },
                 
                 // Introduction
                 { "Scene1_Introduction_WinterSun", "*wprowadzenie z opisem zimowego słońca*" },

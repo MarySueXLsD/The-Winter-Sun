@@ -63,7 +63,7 @@ namespace VisualNovel.Scenes
             string? spot4Facing = null, string? spot5Facing = null, string? spot6Facing = null,
             CharacterMood? spot1Mood = null, CharacterMood? spot2Mood = null, CharacterMood? spot3Mood = null,
             CharacterMood? spot4Mood = null, CharacterMood? spot5Mood = null, CharacterMood? spot6Mood = null,
-            double? cameraZoom = null)
+            double? cameraZoom = null, string? backgroundImage = null)
         {
             if (_translationService == null)
                 _translationService = TranslationService.Instance;
@@ -136,6 +136,7 @@ namespace VisualNovel.Scenes
                     ? _translationService.GetTranslation(character.NameKey) 
                     : "",
                 Text = _translationService.GetTranslation(textKey),
+                BackgroundImage = backgroundImage ?? "",
                 CharacterSpot = leftmostSpot,
                 CharacterFacing = leftFacing,
                 CharacterSpotRight = rightmostSpot,
