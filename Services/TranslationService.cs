@@ -234,7 +234,7 @@ namespace VisualNovel.Services
                 { "Scene1_Mother_3", "Is it over already?" },
                 { "Scene1_Mother_4_1", "Yes..." },
                 { "Scene1_Mother_4_2", "It's easier with children, right? They don't have very important memories yet." },
-                { "Scene1_Mother_Context", "Out of the corner of your eye, you noticed your mom looking wary." },
+                { "Scene1_Mother_Context", "Out of the corner of your eye, you noticed the mother looking wary." },
                 
                 // Village Chief
                 { "Scene1_VillageChief_1_1", "Good afternoon. I am the village chief. I'll say this right away: we have several people who could use your help. If you could call it \"help\". Otherwise, don't stay long. Your folk scare the locals." },
@@ -246,13 +246,12 @@ namespace VisualNovel.Services
                 
                 // Player
                 { "Scene1_Player_1", "Good afternoon." },
-                { "Scene1_Player_2", "What's your name?" },
-                { "Scene1_Player_3", "What kind of cat is that?" },
+                { "Scene1_Player_1_2", "Don't worry. I'll just talk to her. It's usually easier with children." },
+                { "Scene1_Player_2", "What kind of cat is that?" },
+                { "Scene1_Player_3", "Do you love your mom too?" },
                 { "Scene1_Player_4", "Yes, it's usually easier with children..." },
                 { "Scene1_Player_Context_1_1", "The woman hesitates. She doesn't know how to approach you." },
-                { "Scene1_Player_Context_1_2", "Don't worry. I'll just talk to her. It's usually easier with children." },
                 { "Scene1_Player_Context_1_3", "The girl is staring at the floor. She's not even looking at you now." },
-                { "Scene1_Player_Context_2", "Do you love your mom too?" },
                 
                 // Context text
                 { "Scene1_GirlApproaches", "You see a girl approaching you with her eyes downcast. She is carrying a cat in her arms. Behind her walks what appears to be her mother, with a stern but determined look on her face." },
@@ -430,7 +429,7 @@ namespace VisualNovel.Services
                 { "Scene1_Mother_3", "Уже всё?" },
                 { "Scene1_Mother_4_1", "Да..." },
                 { "Scene1_Mother_4_2", "С детьми легче, правда? У них ещё нет очень важных воспоминаний." },
-                { "Scene1_Mother_Context", "Краем глаза вы заметили, что мама смотрит настороженно." },
+                { "Scene1_Mother_Context", "Краем глаза вы заметили, что мать смотрит настороженно." },
                 
                 // Village Chief
                 { "Scene1_VillageChief_1_1", "Добрый день. Я староста деревни. Скажу сразу: у нас есть несколько человек, которым может понадобиться ваша помощь. Если это можно назвать \"помощью\". В противном случае, не задерживайтесь. Ваши люди пугают местных." },
@@ -442,13 +441,12 @@ namespace VisualNovel.Services
                 
                 // Player
                 { "Scene1_Player_1", "Добрый день." },
-                { "Scene1_Player_2", "Как тебя зовут?" },
-                { "Scene1_Player_3", "Что это за кошка?" },
+                { "Scene1_Player_1_2", "Не волнуйтесь. Я просто поговорю с ней. Обычно с детьми легче." },
+                { "Scene1_Player_2", "Что это за кошка?" },
+                { "Scene1_Player_3", "Ты тоже любишь свою маму?" },
                 { "Scene1_Player_4", "Да, обычно с детьми легче..." },
                 { "Scene1_Player_Context_1_1", "Женщина колеблется. Она не знает, как к вам подойти." },
-                { "Scene1_Player_Context_1_2", "Не волнуйтесь. Я просто поговорю с ней. Обычно с детьми легче." },
                 { "Scene1_Player_Context_1_3", "Девочка смотрит в пол. Она даже не смотрит на вас сейчас." },
-                { "Scene1_Player_Context_2", "Ты любишь свою маму тоже?" },
                 
                 // Context text
                 { "Scene1_GirlApproaches", "Вы видите девочку, приближающуюся к вам с опущенными глазами. Она несёт кошку на руках. За ней идёт то, что кажется её матерью, с суровым, но решительным выражением лица." },
@@ -626,7 +624,7 @@ namespace VisualNovel.Services
                 { "Scene1_Mother_3", "Вже все?" },
                 { "Scene1_Mother_4_1", "Так..." },
                 { "Scene1_Mother_4_2", "З дітьми легше, правда? У них ще немає дуже важливих спогадів." },
-                { "Scene1_Mother_Context", "Краєм ока ви помітили, що мама дивиться насторожено." },
+                { "Scene1_Mother_Context", "Краєм ока ви помітили, що мати дивиться насторожено." },
                 
                 // Village Chief
                 { "Scene1_VillageChief_1_1", "Добрий день. Я сільський староста. Скажу одразу: у нас є кілька людей, яким може знадобитися ваша допомога. Якщо це можна назвати \"допомогою\". В іншому випадку, не затримуйтеся. Ваші люди лякають місцевих." },
@@ -638,13 +636,12 @@ namespace VisualNovel.Services
                 
                 // Player
                 { "Scene1_Player_1", "Добрий день." },
-                { "Scene1_Player_2", "Як тебе звуть?" },
-                { "Scene1_Player_3", "Що це за кішка?" },
+                { "Scene1_Player_1_2", "Не хвилюйтеся. Я просто поговорю з нею. Зазвичай з дітьми легше." },
+                { "Scene1_Player_2", "Що це за кішка?" },
+                { "Scene1_Player_3", "Ти теж любиш свою маму?" },
                 { "Scene1_Player_4", "Так, зазвичай з дітьми легше..." },
                 { "Scene1_Player_Context_1_1", "Жінка вагається. Вона не знає, як до вас підійти." },
-                { "Scene1_Player_Context_1_2", "Не хвилюйтеся. Я просто поговорю з нею. Зазвичай з дітьми легше." },
                 { "Scene1_Player_Context_1_3", "Дівчинка дивиться в підлогу. Вона навіть не дивиться на вас зараз." },
-                { "Scene1_Player_Context_2", "Ти любиш свою маму теж?" },
                 
                 // Context text
                 { "Scene1_GirlApproaches", "Ви бачите дівчинку, що наближається до вас з опущеними очима. Вона несе кішку на руках. За нею йде те, що здається її матір'ю, з суворим, але рішучим виразом обличчя." },
@@ -822,7 +819,7 @@ namespace VisualNovel.Services
                 { "Scene1_Mother_3", "Już po wszystkim?" },
                 { "Scene1_Mother_4_1", "Tak..." },
                 { "Scene1_Mother_4_2", "Z dziećmi jest łatwiej, prawda? Nie mają jeszcze bardzo ważnych wspomnień." },
-                { "Scene1_Mother_Context", "Kątem oka zauważyłaś, że mama patrzy nieufnie." },
+                { "Scene1_Mother_Context", "Kątem oka zauważyłeś, że matka patrzy nieufnie." },
                 
                 // Village Chief
                 { "Scene1_VillageChief_1_1", "Dzień dobry. Jestem sołtysem. Powiem od razu: mamy kilku ludzi, którym mogłabyś pomóc. Jeśli można to nazwać \"pomocą\". W przeciwnym razie, nie zatrzymuj się długo. Twoi ludzie straszą miejscowych." },
@@ -834,13 +831,12 @@ namespace VisualNovel.Services
                 
                 // Player
                 { "Scene1_Player_1", "Dzień dobry." },
-                { "Scene1_Player_2", "Jak masz na imię?" },
-                { "Scene1_Player_3", "Jaki to kot?" },
+                { "Scene1_Player_1_2", "Nie martw się. Po prostu z nią porozmawiam. Zwykle z dziećmi jest łatwiej." },
+                { "Scene1_Player_2", "Jaki to kot?" },
+                { "Scene1_Player_3", "Kochasz też swoją mamę?" },
                 { "Scene1_Player_4", "Tak, zwykle z dziećmi jest łatwiej..." },
                 { "Scene1_Player_Context_1_1", "Kobieta waha się. Nie wie, jak do ciebie podejść." },
-                { "Scene1_Player_Context_1_2", "Nie martw się. Po prostu z nią porozmawiam. Zwykle z dziećmi jest łatwiej." },
                 { "Scene1_Player_Context_1_3", "Dziewczynka patrzy w podłogę. Nawet teraz na ciebie nie patrzy." },
-                { "Scene1_Player_Context_2", "Kochasz też swoją mamę?" },
                 
                 // Context text
                 { "Scene1_GirlApproaches", "Widzisz dziewczynkę zbliżającą się do ciebie z opuszczonymi oczami. Niesie kota na rękach. Za nią idzie to, co wydaje się być jej matką, z surowym, ale zdecydowanym wyrazem twarzy." },

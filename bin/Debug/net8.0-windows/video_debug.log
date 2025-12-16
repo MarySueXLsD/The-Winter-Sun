@@ -6759,3 +6759,277 @@
 [2025-12-16 23:15:35.761] OnActivated: Source is null, attempting to load video
 [2025-12-16 23:15:35.762] Background video not found (deprecated), using background image instead
 [2025-12-16 23:15:35.762] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:08.005] Minecraft font with fallback loaded successfully. Font source: ./#Minecraft
+[2025-12-16 23:25:08.034] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-16 23:25:08.237] Window became visible!
+[2025-12-16 23:25:08.424] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:25:08.428] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:08.658] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:08.853] Window_Loaded event fired!
+[2025-12-16 23:25:08.855] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:08.856] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:08.893] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:08.895] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:09.324] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:09.325] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:09.328] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:09.330] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:09.335] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-16 23:25:09.336] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-16 23:25:09.337] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:09.338] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:09.342] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:09.343] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:09.421] OnContentRendered: Source is null, attempting to load video
+[2025-12-16 23:25:09.423] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:09.424] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:12.369] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:25:12.370] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:12.372] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:12.478] AnimatedChromaKeyImage: FramesPath changed to: Assets\Videos\snow-falling-ambient-frames
+[2025-12-16 23:25:12.487] AnimatedChromaKeyImage: Loading frames from: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Videos\snow-falling-ambient-frames
+[2025-12-16 23:25:12.492] AnimatedChromaKeyImage: Found 301 frames, loading progressively...
+[2025-12-16 23:25:12.555] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-16 23:25:12.657] Game background music loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 with target volume 0.0413
+[2025-12-16 23:25:12.660] LoadSnowVideoEarly: Triggering early frame loading (frames will load in background)
+[2025-12-16 23:25:12.720] LoadDialogue: Window not ready, using PrimaryScreenWidth=1804.8
+[2025-12-16 23:25:12.943] Character entering at spot 1 from left
+[2025-12-16 23:25:13.085] Character entering at spot 4 from right
+[2025-12-16 23:25:13.263] Character entering at spot 5 from right
+[2025-12-16 23:25:13.454] Character entering at spot 6 from right
+[2025-12-16 23:25:13.486] AnimatedChromaKeyImage: First frame displayed in 997ms
+[2025-12-16 23:25:14.420] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:25:14.422] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:25:14.495] LoadSnowVideo: Checking for frames directory at: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Videos\snow-falling-ambient-frames
+[2025-12-16 23:25:14.496] LoadSnowVideo: Directory exists: True
+[2025-12-16 23:25:14.497] LoadSnowVideo: Frames directory found, animation should start automatically
+[2025-12-16 23:25:14.805] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:25:14.806] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:14.812] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:15.251] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:25:15.253] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:25:15.253] Characters repositioned after 1 attempts, window size: 1000x600
+[2025-12-16 23:25:19.794] AnimatedChromaKeyImage: Pre-loaded 301 frames in 10806ms
+[2025-12-16 23:25:24.455] AnimatedChromaKeyImage: Loaded and processed 301 frames in 11968ms
+[2025-12-16 23:25:24.458] AnimatedChromaKeyImage: Animation started at 30 FPS with 301 frames
+[2025-12-16 23:25:25.125] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:25.126] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:26.858] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:26.859] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:28.862] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:28.864] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:30.216] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:30.217] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:31.635] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:31.636] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:32.746] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:32.748] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:33.952] Character at spot 4 (slot 3) is exiting to the right
+[2025-12-16 23:25:33.957] Character moving from spot 5 to spot 4 - animating slot 4
+[2025-12-16 23:25:33.961] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:33.962] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:41.296] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:41.297] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:43.004] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:43.005] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:45.854] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:45.855] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:25:47.961] Minecraft font with fallback loaded successfully. Font source: ./#Minecraft
+[2025-12-16 23:25:47.965] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-16 23:25:47.986] Window became visible!
+[2025-12-16 23:25:48.006] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:25:48.007] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.008] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:48.043] Window_Loaded event fired!
+[2025-12-16 23:25:48.044] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.045] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:48.048] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:48.051] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:48.125] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.126] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:48.128] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:48.129] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:25:48.131] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-16 23:25:48.131] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-16 23:25:48.132] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.133] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:48.134] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.135] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:48.169] OnContentRendered: Source is null, attempting to load video
+[2025-12-16 23:25:48.170] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.171] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:48.405] Timer tick 1: Attempting to load video...
+[2025-12-16 23:25:48.407] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:25:48.411] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:25:48.412] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:25:48.413] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.414] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:48.659] Timer tick 2: Attempting to load video...
+[2025-12-16 23:25:48.660] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:25:48.661] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:25:48.661] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:25:48.662] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:48.663] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:49.004] Timer tick 3: Attempting to load video...
+[2025-12-16 23:25:49.004] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:25:49.005] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:25:49.005] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:25:49.006] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:49.006] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:49.199] Timer tick 4: Attempting to load video...
+[2025-12-16 23:25:49.199] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:25:49.200] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:25:49.200] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:25:49.200] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:49.201] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:49.438] Timer tick 5: Attempting to load video...
+[2025-12-16 23:25:49.439] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:25:49.439] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:25:49.439] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:25:49.440] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:49.440] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:25:49.441] Timer stopped after 5 attempts
+[2025-12-16 23:25:49.646] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:25:49.647] Background video not found (deprecated), using background image instead
+[2025-12-16 23:25:49.648] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:33.082] Minecraft font with fallback loaded successfully. Font source: ./#Minecraft
+[2025-12-16 23:26:33.114] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-16 23:26:33.310] Window became visible!
+[2025-12-16 23:26:33.477] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:26:33.481] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:33.706] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:33.905] Window_Loaded event fired!
+[2025-12-16 23:26:33.906] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:33.908] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:33.924] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:26:33.926] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:26:34.413] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:34.414] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:34.420] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:26:34.438] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:26:34.458] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-16 23:26:34.460] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-16 23:26:34.461] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:34.462] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:34.473] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:34.475] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:34.620] OnContentRendered: Source is null, attempting to load video
+[2025-12-16 23:26:34.622] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:34.623] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:36.695] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:26:36.697] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:36.699] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:36.824] AnimatedChromaKeyImage: FramesPath changed to: Assets\Videos\snow-falling-ambient-frames
+[2025-12-16 23:26:36.856] AnimatedChromaKeyImage: Loading frames from: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Videos\snow-falling-ambient-frames
+[2025-12-16 23:26:36.861] AnimatedChromaKeyImage: Found 301 frames, loading progressively...
+[2025-12-16 23:26:36.892] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-16 23:26:37.027] Game background music loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 with target volume 0.0413
+[2025-12-16 23:26:37.030] LoadSnowVideoEarly: Triggering early frame loading (frames will load in background)
+[2025-12-16 23:26:37.081] LoadDialogue: Window not ready, using PrimaryScreenWidth=1804.8
+[2025-12-16 23:26:37.293] Character entering at spot 1 from left
+[2025-12-16 23:26:37.402] Character entering at spot 4 from right
+[2025-12-16 23:26:37.553] Character entering at spot 5 from right
+[2025-12-16 23:26:37.790] Character entering at spot 6 from right
+[2025-12-16 23:26:37.820] AnimatedChromaKeyImage: First frame displayed in 963ms
+[2025-12-16 23:26:39.145] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:26:39.146] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:26:39.858] LoadSnowVideo: Checking for frames directory at: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Videos\snow-falling-ambient-frames
+[2025-12-16 23:26:39.859] LoadSnowVideo: Directory exists: True
+[2025-12-16 23:26:39.860] LoadSnowVideo: Frames directory found, animation should start automatically
+[2025-12-16 23:26:40.271] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:26:40.272] Background video not found (deprecated), using background image instead
+[2025-12-16 23:26:40.273] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:26:40.761] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:26:40.762] RepositionAllCharacters: windowWidth=1000, charWidth=225
+[2025-12-16 23:26:40.762] Characters repositioned after 1 attempts, window size: 1000x600
+[2025-12-16 23:26:44.322] AnimatedChromaKeyImage: Pre-loaded 301 frames in 10336ms
+[2025-12-16 23:26:47.873] AnimatedChromaKeyImage: Loaded and processed 301 frames in 11018ms
+[2025-12-16 23:26:47.876] AnimatedChromaKeyImage: Animation started at 30 FPS with 301 frames
+[2025-12-16 23:26:48.543] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:48.546] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:49.199] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:49.200] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:49.904] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:49.905] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:51.240] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:51.241] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:51.952] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:51.952] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:52.930] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:52.931] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:54.050] Character at spot 4 (slot 3) is exiting to the right
+[2025-12-16 23:26:54.052] Character moving from spot 5 to spot 4 - animating slot 4
+[2025-12-16 23:26:54.055] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:54.056] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:58.043] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:58.044] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:59.540] Character moving from spot 6 to spot 5 - animating slot 5
+[2025-12-16 23:26:59.542] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:26:59.543] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:01.988] Character moving from spot 5 to spot 6 - animating slot 5
+[2025-12-16 23:27:01.989] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:01.990] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:06.611] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:06.612] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:12.772] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:12.774] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:16.792] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:16.793] RepositionAllCharacters: windowWidth=1817.6, charWidth=408.96
+[2025-12-16 23:27:19.717] Minecraft font with fallback loaded successfully. Font source: ./#Minecraft
+[2025-12-16 23:27:19.722] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-16 23:27:19.747] Window became visible!
+[2025-12-16 23:27:19.770] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:27:19.771] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:19.772] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:19.835] Window_Loaded event fired!
+[2025-12-16 23:27:19.836] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:19.837] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:19.840] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:27:19.841] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:27:19.899] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:19.900] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:19.902] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0413
+[2025-12-16 23:27:19.903] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0413
+[2025-12-16 23:27:19.905] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-16 23:27:19.905] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-16 23:27:19.906] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:19.907] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:19.908] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:19.909] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:19.932] OnContentRendered: Source is null, attempting to load video
+[2025-12-16 23:27:19.933] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:19.934] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:20.108] Timer tick 1: Attempting to load video...
+[2025-12-16 23:27:20.110] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:27:20.117] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:27:20.118] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:27:20.119] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:20.120] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:20.324] Timer tick 2: Attempting to load video...
+[2025-12-16 23:27:20.325] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:27:20.325] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:27:20.326] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:27:20.326] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:20.327] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:20.528] Timer tick 3: Attempting to load video...
+[2025-12-16 23:27:20.529] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:27:20.529] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:27:20.530] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:27:20.530] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:20.531] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:20.730] Timer tick 4: Attempting to load video...
+[2025-12-16 23:27:20.731] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:27:20.732] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:27:20.732] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:27:20.733] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:20.734] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:20.933] Timer tick 5: Attempting to load video...
+[2025-12-16 23:27:20.934] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-16 23:27:20.934] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-16 23:27:20.935] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-16 23:27:20.936] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:20.936] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-16 23:27:20.937] Timer stopped after 5 attempts
+[2025-12-16 23:27:21.695] OnActivated: Source is null, attempting to load video
+[2025-12-16 23:27:21.695] Background video not found (deprecated), using background image instead
+[2025-12-16 23:27:21.696] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png

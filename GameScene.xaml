@@ -29,10 +29,10 @@
                      MediaEnded="GameBackgroundMusic_MediaEnded"/>
 
         <!-- Background Image Area with Camera Transform -->
-        <Border Grid.Row="0" Grid.RowSpan="2" ClipToBounds="True" x:Name="CameraContainer">
+        <Border Grid.Row="0" Grid.RowSpan="2" ClipToBounds="True" x:Name="CameraContainer" RenderTransformOrigin="0,1">
             <Border.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform x:Name="CameraZoomTransform" ScaleX="1" ScaleY="1" CenterX="0.5" CenterY="0.5"/>
+                    <ScaleTransform x:Name="CameraZoomTransform" ScaleX="1" ScaleY="1"/>
                     <TranslateTransform x:Name="CameraPanTransform" X="0" Y="0"/>
                 </TransformGroup>
             </Border.RenderTransform>
