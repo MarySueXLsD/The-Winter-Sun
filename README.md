@@ -20,6 +20,26 @@ Every choice matters. Every memory burned has consequences. In a world where for
 
 ---
 
+## 🎬 Gameplay Showcase
+
+<div align="center">
+
+### Watch the Game in Action
+
+**Experience the immersive visual novel with dynamic parallax effects, choice-driven narrative, and atmospheric storytelling.**
+
+[![Gameplay Video](https://img.shields.io/badge/▶️-Watch%20Gameplay%20Video-FF0000?style=for-the-badge&logo=youtube)](Examples/video1.mp4)
+
+**Click above to view the gameplay demonstration**
+
+*The video showcases the game's visual effects, character interactions, dialogue system, and the unique memory-burning mechanic.*
+
+[📥 Direct Download](Examples/video1.mp4) | [📂 View File](Examples/video1.mp4)
+
+</div>
+
+---
+
 ## 📖 Story
 
 You are a traveler marked by an ancient curse. Chains clink on your shoulders, holding a black furnace that burns with an eerie red glow. The origin of your curse is lost to you—memories that slip away like smoke, fragments of a past you can barely recall.
