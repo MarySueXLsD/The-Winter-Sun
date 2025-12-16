@@ -915,12 +915,15 @@ namespace VisualNovel
                     }
                 }
 
-                TransitionToGameScene(() =>
-                {
-                    var gameScene = new GameScene(latestSave.CurrentDialogueIndex, latestSave.GameState);
-                    gameScene.Show();
-                    this.Close();
-                });
+                // Start fading music immediately (don't wait)
+                FadeOutMusic(null);
+                
+                // Use the chapter title transition for loading saved games too
+                TransitionToGameSceneWithChapterTitle(
+                    _translationService.GetTranslation("Chapter1_Title"), 
+                    null, 
+                    latestSave.CurrentDialogueIndex, 
+                    latestSave.GameState);
             }
         }
 
@@ -1142,7 +1145,7 @@ namespace VisualNovel
             });
         }
 
-        private void TransitionToGameSceneWithChapterTitle(string chapterName, Action? createGameScene)
+        private void TransitionToGameSceneWithChapterTitle(string chapterName, Action? createGameScene, int? loadFromIndex = null, Models.GameState? gameState = null)
         {
             // Hide menu elements and sidebar immediately
             if (MenuSidebar != null)
@@ -1153,21 +1156,30 @@ namespace VisualNovel
             // Create GameScene early (hidden) so it can preload everything while chapter title is showing
             GameScene? preloadedGameScene = null;
             
-            // For new games, create GameScene now; for other cases, use the provided action
+            // Create GameScene now (for new game or loading saved game)
             if (createGameScene == null)
             {
-                // New game - create GameScene but don't show it yet
-                // We'll show it off-screen when chapter title appears
-                preloadedGameScene = new GameScene();
-                // Configure it to be hidden and off-screen
-                // Keep opacity at 1 to prevent white blinking - we'll control visibility instead
-                preloadedGameScene.Left = -10000; // Move off-screen
-                preloadedGameScene.Top = -10000;
-                preloadedGameScene.Opacity = 1; // Keep at 1 to prevent white flash
-                preloadedGameScene.ShowInTaskbar = false;
-                preloadedGameScene.WindowState = WindowState.Normal; // Don't maximize yet
-                preloadedGameScene.Visibility = Visibility.Hidden; // Hide using Visibility instead
-                // Don't call Show() yet - we'll show it when chapter title appears
+                try
+                {
+                    // Create GameScene but don't show it yet
+                    // We'll show it off-screen when chapter title appears
+                    preloadedGameScene = new GameScene(loadFromIndex, gameState);
+                    // Configure it to be hidden and off-screen
+                    // Keep opacity at 1 to prevent white blinking - we'll control visibility instead
+                    preloadedGameScene.Left = -10000; // Move off-screen
+                    preloadedGameScene.Top = -10000;
+                    preloadedGameScene.Opacity = 1; // Keep at 1 to prevent white flash
+                    preloadedGameScene.ShowInTaskbar = false;
+                    preloadedGameScene.WindowState = WindowState.Normal; // Don't maximize yet
+                    preloadedGameScene.Visibility = Visibility.Hidden; // Hide using Visibility instead
+                    // Don't call Show() yet - we'll show it when chapter title appears
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to create game scene: {ex.Message}\n\nStack trace: {ex.StackTrace}", 
+                        "Load Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
             }
             
             // Step 1: Fade out the menu (dark overlay)
@@ -1345,6 +1357,22 @@ namespace VisualNovel
             TransitionToGameScene(createGameScene);
         }
 
+        /// <summary>
+        /// Load a saved game with chapter title transition (called from SaveLoadMenu)
+        /// </summary>
+        public void LoadGameWithChapterTitle(int dialogueIndex, Models.GameState gameState)
+        {
+            // Start fading music immediately
+            FadeOutMusic(null);
+            
+            // Use the chapter title transition
+            TransitionToGameSceneWithChapterTitle(
+                _translationService.GetTranslation("Chapter1_Title"), 
+                null, 
+                dialogueIndex, 
+                gameState);
+        }
+
         private void TranslationService_LanguageChanged(object? sender, EventArgs e)
         {
             Dispatcher.BeginInvoke(new Action(() =>
@@ -1395,6 +1423,23 @@ namespace VisualNovel
                 _translationService.LanguageChanged -= TranslationService_LanguageChanged;
             }
             base.OnClosed(e);
+            
+            // If no other main windows are open, shut down the application
+            // This handles the case when MainWindow is closed via X button or after transitioning
+            bool hasOtherWindows = false;
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window != this && window.IsVisible && !(window is SaveLoadMenu) && !(window is Dialogs.GameDialog) && !(window is SettingsMenu))
+                {
+                    hasOtherWindows = true;
+                    break;
+                }
+            }
+            
+            if (!hasOtherWindows)
+            {
+                Application.Current.Shutdown();
+            }
         }
 
         private void StartChapterTitlePulse()

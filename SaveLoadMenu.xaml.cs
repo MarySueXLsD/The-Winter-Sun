@@ -171,33 +171,40 @@ namespace VisualNovel
                 // Load game
                 if (existingSave != null)
                 {
-                    // Fade out music from MainWindow before transitioning
-                    if (Application.Current.MainWindow != null && Application.Current.MainWindow is MainWindow mainWindow)
+                    try
                     {
-                        mainWindow.FadeOutMusicAndClose(() =>
+                        // Load from MainWindow with chapter title transition
+                        if (Application.Current.MainWindow != null && Application.Current.MainWindow is MainWindow mainWindow)
                         {
+                            // Close this dialog first, then start the transition
+                            this.Close();
+                            mainWindow.LoadGameWithChapterTitle(existingSave.CurrentDialogueIndex, existingSave.GameState);
+                        }
+                        else
+                        {
+                            // If MainWindow is not available, load from GameScene
+                            // Store reference to old GameScene before creating new one
+                            var oldGameScene = this.Owner as GameScene;
+                            if (oldGameScene == null && Application.Current.MainWindow is GameScene gs)
+                            {
+                                oldGameScene = gs;
+                            }
+                            
+                            // Close this dialog first (before closing owner)
+                            this.Close();
+                            
+                            // Create new GameScene
                             var gameScene = new GameScene(existingSave.CurrentDialogueIndex, existingSave.GameState);
                             gameScene.Show();
-                            this.Close();
-                            mainWindow.Close();
-                        });
+                            
+                            // Now close the old GameScene (after new one is shown and this dialog is closed)
+                            oldGameScene?.Close();
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        // If MainWindow is not available, just load directly
-                        // Close the owner window if it's a GameScene
-                        if (this.Owner is GameScene currentGameScene)
-                        {
-                            currentGameScene.Close();
-                        }
-                        else if (Application.Current.MainWindow != null && Application.Current.MainWindow is GameScene)
-                        {
-                            Application.Current.MainWindow.Close();
-                        }
-                        
-                        var gameScene = new GameScene(existingSave.CurrentDialogueIndex, existingSave.GameState);
-                        gameScene.Show();
-                        this.Close();
+                        MessageBox.Show($"Failed to load game: {ex.Message}\n\nStack trace: {ex.StackTrace}", 
+                            "Load Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
                 else

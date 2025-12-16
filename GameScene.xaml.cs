@@ -44,6 +44,9 @@ namespace VisualNovel
         // Track which character image is at which spot (1-6) from previous dialogue
         private Dictionary<int, string?> _previousSpotCharacters = new Dictionary<int, string?>();
         
+        // Flag to defer character positioning until window is ready (prevents using wrong dimensions)
+        private bool _deferCharacterPositioning = false;
+        
         // Character spot positions (1-6, as percentage of screen width from left)
         // Evenly distributed across 6 columns
         private static readonly double[] SpotPositions = { 0.083, 0.25, 0.417, 0.583, 0.75, 0.917 }; // Spot 1-6 (6-column grid)
@@ -184,7 +187,8 @@ namespace VisualNovel
             // Handle window size changes to update character positions and sizes
             this.SizeChanged += GameScene_SizeChanged;
             
-            // Load dialogue immediately, but camera will update after layout completes
+            // Load dialogue - set flag to defer character positioning until window is ready
+            _deferCharacterPositioning = true;
             LoadDialogue(_currentDialogueIndex);
             
             // Fade in the window when it's shown
@@ -208,52 +212,64 @@ namespace VisualNovel
             // Apply settings from config after window is fully loaded
             ApplySettings();
             
-            // Ensure camera zoom is applied correctly after window is fully loaded
-            // This fixes the issue where the first dialogue has incorrect zoom
-            Dispatcher.BeginInvoke(new Action(() =>
+            // Ensure characters and camera are positioned correctly after window is fully loaded
+            // This fixes the issue where characters are misplaced when loading saved games
+            // Use a timer to wait for window to be fully maximized and laid out
+            var repositionTimer = new DispatcherTimer
             {
-                var dialogue = _storyService.GetDialogue(_currentDialogueIndex);
-                if (dialogue != null && dialogue.CameraZoom.HasValue)
-                {
-                    // Collect active spots
-                    var activeSpots = new List<int>();
-                    if (_currentLeftSpot.HasValue)
-                    {
-                        activeSpots.Add(_currentLeftSpot.Value);
-                    }
-                    if (_currentRightSpot.HasValue)
-                    {
-                        activeSpots.Add(_currentRightSpot.Value);
-                    }
-                    
-                    // Update camera with correct spots first (now that window is fully laid out)
-                    // Use SetCharacterSpotsWithoutAdjustment to avoid automatic zoom override
-                    if (activeSpots.Count > 0)
-                    {
-                        _camera.SetCharacterSpotsWithoutAdjustment(activeSpots);
-                    }
-                    
-                    // Then apply the correct zoom
-                    _camera.ApplyZoom(dialogue.CameraZoom);
-                }
+                Interval = TimeSpan.FromMilliseconds(100)
+            };
+            int repositionAttempts = 0;
+            bool hasRepositioned = false;
+            
+            repositionTimer.Tick += (timerSender, timerArgs) =>
+            {
+                repositionAttempts++;
                 
-                // After everything is loaded and rendered, fade out the dark overlay
-                // Wait a bit more to ensure everything is fully rendered and MainWindow has closed
-                Dispatcher.BeginInvoke(new Action(() =>
+                // Wait until window has actual dimensions (is fully maximized)
+                if (!hasRepositioned && this.ActualWidth > 100 && this.ActualHeight > 100)
                 {
-                    // Add a small delay to ensure MainWindow has closed and scene is fully ready
+                    hasRepositioned = true;
+                    repositionTimer.Stop();
+                    
+                    // Clear deferred positioning flag now that window is ready
+                    _deferCharacterPositioning = false;
+                    
+                    // Update character sizes and positions based on actual window dimensions
+                    UpdateCharacterSizes();
+                    
+                    var dialogue = _storyService.GetDialogue(_currentDialogueIndex);
+                    if (dialogue != null)
+                    {
+                        // Reposition all characters to correct positions using actual window dimensions
+                        RepositionAllCharacters(dialogue);
+                    }
+                    
+                    LogToFile($"Characters repositioned after {repositionAttempts} attempts, window size: {this.ActualWidth}x{this.ActualHeight}");
+                    
+                    // After repositioning, fade out the dark overlay
                     var delayTimer = new DispatcherTimer
                     {
                         Interval = TimeSpan.FromMilliseconds(200)
                     };
-                    delayTimer.Tick += (s, e) =>
+                    delayTimer.Tick += (s2, e2) =>
                     {
                         delayTimer.Stop();
                         FadeOutSceneOverlay();
                     };
                     delayTimer.Start();
-                }), DispatcherPriority.Render);
-            }), System.Windows.Threading.DispatcherPriority.Loaded);
+                }
+                else if (repositionAttempts >= 20) // Give up after 2 seconds
+                {
+                    repositionTimer.Stop();
+                    LogToFile($"Failed to reposition characters after {repositionAttempts} attempts");
+                    
+                    // Still fade out overlay even if repositioning failed
+                    FadeOutSceneOverlay();
+                }
+            };
+            
+            repositionTimer.Start();
         }
 
         private void FadeOutSceneOverlay()
@@ -332,6 +348,98 @@ namespace VisualNovel
             
             CharacterImageSlot6Border.Width = charWidth;
             CharacterImageSlot6Border.Height = charHeight;
+        }
+
+        /// <summary>
+        /// Clear all character slots and hide all character borders.
+        /// Used before reloading dialogue to reset state.
+        /// </summary>
+        private void ClearAllCharacterSlots()
+        {
+            // Hide all character borders
+            CharacterImageLeftBorder.Visibility = Visibility.Collapsed;
+            CharacterImageRightBorder.Visibility = Visibility.Collapsed;
+            CharacterImageSlot3Border.Visibility = Visibility.Collapsed;
+            CharacterImageSlot4Border.Visibility = Visibility.Collapsed;
+            CharacterImageSlot5Border.Visibility = Visibility.Collapsed;
+            CharacterImageSlot6Border.Visibility = Visibility.Collapsed;
+            
+            // Clear the character slots dictionary
+            foreach (var kvp in _characterSlots)
+            {
+                kvp.Value.border.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        /// <summary>
+        /// Reposition all visible characters to their correct positions based on current window dimensions.
+        /// This is used after window load to fix positions that were calculated with incorrect dimensions.
+        /// </summary>
+        private void RepositionAllCharacters(DialogueLine dialogue)
+        {
+            if (this.ActualWidth == 0 || this.ActualHeight == 0)
+                return;
+            
+            // Use the window's actual width directly to ensure correct positioning
+            // This is critical after loading because _camera.GetWindowWidth() may return PrimaryScreenWidth
+            // which can be different from actual window width due to DPI scaling or taskbar
+            double windowWidth = this.ActualWidth;
+            double charWidth = windowWidth * CharacterWidthPercentage;
+            
+            LogToFile($"RepositionAllCharacters: windowWidth={windowWidth}, charWidth={charWidth}");
+            
+            // Reposition characters using CharacterSlots (multiple character system)
+            if (dialogue.CharacterSlots != null && dialogue.CharacterSlots.Count > 0)
+            {
+                foreach (var kvp in _characterSlots)
+                {
+                    int slotIndex = kvp.Key;
+                    var slot = kvp.Value;
+                    
+                    if (slot.border.Visibility == Visibility.Visible && slot.spot.HasValue)
+                    {
+                        int spotNumber = slot.spot.Value;
+                        if (spotNumber >= 1 && spotNumber <= 6)
+                        {
+                            double position = SpotPositions[spotNumber - 1] * windowWidth - (charWidth / 2);
+                            position = Math.Max(0, Math.Min(position, windowWidth - charWidth));
+                            
+                            // Set position directly without animation
+                            Canvas.SetLeft(slot.border, position);
+                            Canvas.SetBottom(slot.border, CharacterBottomOffset);
+                            
+                            // Update size
+                            slot.border.Width = charWidth;
+                            slot.border.Height = GetCharacterHeight();
+                        }
+                    }
+                }
+            }
+            
+            // Also reposition legacy left/right characters if visible
+            if (CharacterImageLeftBorder.Visibility == Visibility.Visible && _currentLeftSpot.HasValue)
+            {
+                int spot = _currentLeftSpot.Value;
+                if (spot >= 1 && spot <= 6)
+                {
+                    double position = SpotPositions[spot - 1] * windowWidth - (charWidth / 2);
+                    position = Math.Max(0, Math.Min(position, windowWidth - charWidth));
+                    Canvas.SetLeft(CharacterImageLeftBorder, position);
+                }
+            }
+            
+            if (CharacterImageRightBorder.Visibility == Visibility.Visible && _currentRightSpot.HasValue)
+            {
+                int spot = _currentRightSpot.Value;
+                if (spot >= 1 && spot <= 6)
+                {
+                    double position = SpotPositions[spot - 1] * windowWidth - (charWidth / 2);
+                    position = Math.Max(0, Math.Min(position, windowWidth - charWidth));
+                    Canvas.SetLeft(CharacterImageRightBorder, position);
+                }
+            }
+            
+            LogToFile($"RepositionAllCharacters: windowWidth={windowWidth}, charWidth={charWidth}");
         }
 
         private void LoadSceneBackground()
@@ -864,8 +972,18 @@ namespace VisualNovel
             // Check if we're using the new multiple character system (CharacterSlots)
             if (dialogue.CharacterSlots != null && dialogue.CharacterSlots.Count > 0)
             {
-                double windowWidth = _camera.GetWindowWidth();
-                double charWidth = GetCharacterWidth();
+                // If deferring character positioning (window not ready yet), get dimensions from window
+                // This ensures we use proper dimensions when window is fully laid out
+                double windowWidth = _deferCharacterPositioning ? this.ActualWidth : _camera.GetWindowWidth();
+                double charWidth = _deferCharacterPositioning ? this.ActualWidth * CharacterWidthPercentage : GetCharacterWidth();
+                
+                // If window isn't ready yet, use screen width as fallback but log a warning
+                if (windowWidth <= 0)
+                {
+                    windowWidth = SystemParameters.PrimaryScreenWidth;
+                    charWidth = windowWidth * CharacterWidthPercentage;
+                    LogToFile($"LoadDialogue: Window not ready, using PrimaryScreenWidth={windowWidth}");
+                }
                 
                 // Build a set of current character images and their new spots
                 var currentCharacterSpots = new Dictionary<string, int>();
@@ -1386,10 +1504,12 @@ namespace VisualNovel
 
         private void PositionCharacters(DialogueLine dialogue)
         {
-            // If using CharacterSlots, positioning is already done in LoadDialogue
-            // Just update camera with active spots
+            // If using CharacterSlots, reposition them based on current window dimensions
             if (dialogue.CharacterSlots != null && dialogue.CharacterSlots.Count > 0)
             {
+                // Actually reposition the characters
+                RepositionAllCharacters(dialogue);
+                
                 var characterSlotSpots = dialogue.CharacterSlots.Select(s => s.Spot).ToList();
                 
                 // Update camera after layout is complete
@@ -2133,6 +2253,41 @@ namespace VisualNovel
             base.OnClosing(e);
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            // Unsubscribe from events
+            if (_translationService != null)
+            {
+                _translationService.LanguageChanged -= TranslationService_LanguageChanged;
+            }
+            
+            // Stop all timers and cleanup
+            _typingTimer?.Stop();
+            _timeBlinkTimer?.Stop();
+            _fpsTimer?.Stop();
+            _parallaxUpdateTimer?.Stop();
+            CompositionTarget.Rendering -= CompositionTarget_Rendering;
+            GameBackgroundMusic?.Close();
+            
+            base.OnClosed(e);
+            
+            // If no other main windows are open, shut down the application
+            bool hasOtherWindows = false;
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window != this && window.IsVisible && !(window is SaveLoadMenu) && !(window is Dialogs.GameDialog) && !(window is SettingsMenu))
+                {
+                    hasOtherWindows = true;
+                    break;
+                }
+            }
+            
+            if (!hasOtherWindows)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+
         private void ChapterTitlePanel_Loaded(object sender, RoutedEventArgs e)
         {
             // Measure the text width and set the line width to extend beyond it
@@ -2336,21 +2491,6 @@ namespace VisualNovel
             {
                 ChapterTitleText.Text = _translationService.GetTranslation("Chapter1_Title");
             }
-        }
-
-        protected override void OnClosed(EventArgs e)
-        {
-            if (_translationService != null)
-            {
-                _translationService.LanguageChanged -= TranslationService_LanguageChanged;
-            }
-            _typingTimer?.Stop();
-            _timeBlinkTimer?.Stop();
-            _fpsTimer?.Stop();
-            _parallaxUpdateTimer?.Stop();
-            CompositionTarget.Rendering -= CompositionTarget_Rendering;
-            GameBackgroundMusic?.Close();
-            base.OnClosed(e);
         }
     }
 }

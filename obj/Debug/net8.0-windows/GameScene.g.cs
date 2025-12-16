@@ -412,7 +412,7 @@ namespace VisualNovel {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VisualNovel;component/gamescene.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VisualNovel;V1.0.0.0;component/gamescene.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\GameScene.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
