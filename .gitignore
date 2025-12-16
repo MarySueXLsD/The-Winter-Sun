@@ -1,0 +1,41 @@
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Rr]elease/
+[Dd]ebug/
+
+# Executables
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# NuGet
+packages/
+*.nupkg
+
+# Build outputs
+*.log
+*.vspscc
+*.vssscc
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Publish output
+publish/
+
