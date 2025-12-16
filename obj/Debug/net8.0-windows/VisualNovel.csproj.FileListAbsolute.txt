@@ -1,0 +1,68 @@
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.csproj.AssemblyReference.cache
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\GameScene.baml
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\SaveLoadMenu.baml
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\GameScene.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\SaveLoadMenu.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel_MarkupCompile.cache
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.g.resources
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.AssemblyInfoInputs.cache
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.AssemblyInfo.cs
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.csproj.CoreCompileInputs.cache
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\VisualNovel.exe
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\VisualNovel.deps.json
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\VisualNovel.runtimeconfig.json
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\VisualNovel.pdb
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNo.FFE31540.Up2Date
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\refint\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.pdb
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel.genruntimeconfig.cache
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\ref\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\Assets\README.md
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\bin\Debug\net8.0-windows\Assets\Videos\background_main_menu.mp4
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\VisualNovel_MarkupCompile.lref
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\Dialogs\GameDialog.baml
+C:\Users\abbig\PycharmProjects\Private\Visual Novel in C#\obj\Debug\net8.0-windows\Dialogs\GameDialog.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\README.md
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\VisualNovel.exe
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\VisualNovel.deps.json
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\VisualNovel.runtimeconfig.json
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\VisualNovel.pdb
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.csproj.AssemblyReference.cache
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dialogs\ChoiceMenu.baml
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dialogs\GameDialog.baml
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\SaveLoadMenu.baml
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\SettingsMenu.baml
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dialogs\ChoiceMenu.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dialogs\GameDialog.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\GameScene.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\SaveLoadMenu.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\SettingsMenu.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel_MarkupCompile.cache
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel_MarkupCompile.lref
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\GameScene.baml
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.g.resources
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.AssemblyInfoInputs.cache
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.AssemblyInfo.cs
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.csproj.CoreCompileInputs.cache
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNo.FFE31540.Up2Date
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\refint\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.pdb
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.genruntimeconfig.cache
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\ref\VisualNovel.dll
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.sourcelink.json

@@ -1,0 +1,73 @@
+<UserControl x:Class="VisualNovel.ChoiceMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+    <UserControl.Resources>
+        <!-- Minecraft Font Family (will be set programmatically) -->
+        <FontFamily x:Key="MinecraftFont">Arial</FontFamily>
+        
+        <!-- Custom Choice Button Style -->
+        <Style x:Key="ChoiceButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#AA000000"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF00FFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="15,12,15,12"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="FontFamily" Value="{StaticResource MinecraftFont}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="MinHeight" Value="50"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder"
+                               Background="{TemplateBinding Background}"
+                               BorderBrush="{TemplateBinding BorderBrush}"
+                               BorderThickness="{TemplateBinding BorderThickness}"
+                               MinHeight="{TemplateBinding MinHeight}">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FF00FFFF" 
+                                                 BlurRadius="0" 
+                                                 ShadowDepth="2" 
+                                                 Opacity="0.8"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                             VerticalAlignment="Center"
+                                             Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#CC008080"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#FF00FFFF"/>
+                                <Setter Property="Foreground" Value="#000000"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#AA000000"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#808080"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Border Background="#E0000000" BorderBrush="#FF00FFFF" BorderThickness="3" 
+            Padding="20" MaxWidth="600"
+            HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border.Effect>
+            <DropShadowEffect Color="#FF00FFFF" BlurRadius="0" ShadowDepth="3" Opacity="0.9"/>
+        </Border.Effect>
+        <StackPanel x:Name="ChoicesContainer">
+            <!-- Choices will be added dynamically -->
+        </StackPanel>
+    </Border>
+</UserControl>
+
