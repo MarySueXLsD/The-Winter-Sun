@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         ShowInTaskbar="False">
     <Window.Resources>
-        <!-- Minecraft Font Family (will be set programmatically) -->
+        <!-- Dialogues Latin Font Family (will be set programmatically) -->
         <FontFamily x:Key="MinecraftFont">Arial</FontFamily>
         
         <!-- ScrollBar Line Button Style (for up/down arrows) - Must be defined before GameScrollBarStyle -->

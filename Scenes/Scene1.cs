@@ -83,7 +83,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                cameraZoom: 1.4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Narrator",
@@ -92,7 +92,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                cameraZoom: 1.4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Narrator",
@@ -101,7 +101,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                cameraZoom: 1.4
             ));
             
             // Screen darkens
@@ -112,7 +112,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                cameraZoom: 1.4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Player",
@@ -121,7 +121,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                cameraZoom: 1.4
             ));
             
             // Background changes to main street
@@ -132,7 +132,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                cameraZoom: 1.4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Player",
@@ -141,7 +141,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                cameraZoom: 1.4
             ));
             
             dialogues.Add(CreateDialogue(
@@ -154,7 +154,7 @@ namespace VisualNovel.Scenes
                 spot5: "GirlWithCat",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Sad,
-                cameraZoom: 1.0
+                cameraZoom: 1.1
             ));
             
             // Mother appears from right on spot 6

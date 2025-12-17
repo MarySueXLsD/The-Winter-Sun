@@ -109,8 +109,8 @@ namespace VisualNovel
             // This prevents white blinking during scene transitions
             this.Opacity = 1;
             
-            // Load and apply Minecraft font to all text elements
-            LoadMinecraftFont();
+            // Load and apply Dialogues Latin font to all text elements
+            LoadDialogueFont();
             
             // Load custom cursor
             LoadCustomCursor();
@@ -581,26 +581,26 @@ namespace VisualNovel
             }
         }
 
-        private void LoadMinecraftFont()
+        private void LoadDialogueFont()
         {
-            var minecraftFont = FontHelper.LoadMinecraftFontWithFallback();
-                Resources["MinecraftFont"] = minecraftFont;
+            var dialogueFont = FontHelper.LoadDialogueFontWithFallback();
+                Resources["MinecraftFont"] = dialogueFont;
                 
                 // Apply font to all text elements
-                CharacterNameText.FontFamily = minecraftFont;
-                CharacterStatusText.FontFamily = minecraftFont;
-                DialogueText.FontFamily = minecraftFont;
-                SkipIndicator.FontFamily = minecraftFont;
-                LocationText.FontFamily = minecraftFont;
-                TimeHours.FontFamily = minecraftFont;
-                TimeColon.FontFamily = minecraftFont;
-                TimeMinutes.FontFamily = minecraftFont;
-                ChapterTitleText.FontFamily = minecraftFont;
-                VersionText.FontFamily = minecraftFont;
-                FPSCounter.FontFamily = minecraftFont;
-                SaveButton.FontFamily = minecraftFont;
-                LoadButton.FontFamily = minecraftFont;
-                MenuButton.FontFamily = minecraftFont;
+                CharacterNameText.FontFamily = dialogueFont;
+                CharacterStatusText.FontFamily = dialogueFont;
+                DialogueText.FontFamily = dialogueFont;
+                SkipIndicator.FontFamily = dialogueFont;
+                LocationText.FontFamily = dialogueFont;
+                TimeHours.FontFamily = dialogueFont;
+                TimeColon.FontFamily = dialogueFont;
+                TimeMinutes.FontFamily = dialogueFont;
+                ChapterTitleText.FontFamily = dialogueFont;
+                VersionText.FontFamily = dialogueFont;
+                FPSCounter.FontFamily = dialogueFont;
+                SaveButton.FontFamily = dialogueFont;
+                LoadButton.FontFamily = dialogueFont;
+                MenuButton.FontFamily = dialogueFont;
             
             // Apply translations after font is loaded
             Dispatcher.BeginInvoke(new Action(() =>

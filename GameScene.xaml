@@ -18,7 +18,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="260"/>
+            <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
         
         <!-- Background Music -->
@@ -217,9 +217,9 @@
                 <!-- Dialogue Text -->
                 <TextBlock x:Name="DialogueText" Grid.Row="1" 
                           Text="Dialogue text will appear here..." 
-                          FontSize="28" Foreground="#FF2A1A0A" 
+                          FontSize="32" Foreground="#FF2A1A0A" 
                           TextWrapping="Wrap" Margin="15,5,15,15"
-                          LineHeight="56"/>
+                          LineHeight="60"/>
 
                 <!-- Version Text (Bottom Left of dialogue box) -->
                 <TextBlock x:Name="VersionText"

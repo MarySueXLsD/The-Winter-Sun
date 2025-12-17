@@ -6,17 +6,17 @@ namespace VisualNovel.Services
 {
     public static class FontHelper
     {
-        private static FontFamily? _cachedMinecraftFont = null;
-        private static FontFamily? _cachedMinecraftFontWithFallback = null;
+        private static FontFamily? _cachedDialogueFont = null;
+        private static FontFamily? _cachedDialogueFontWithFallback = null;
 
-        public static FontFamily? LoadMinecraftFont()
+        public static FontFamily? LoadDialogueFont()
         {
-            if (_cachedMinecraftFont != null)
-                return _cachedMinecraftFont;
+            if (_cachedDialogueFont != null)
+                return _cachedDialogueFont;
 
             try
             {
-                string fontPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Fonts", "Minecraft.ttf");
+                string fontPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Fonts", "Dialogues_latin.ttf");
                 
                 if (!File.Exists(fontPath))
                 {
@@ -30,7 +30,7 @@ namespace VisualNovel.Services
                 {
                     var fontUri = new Uri(fontPath, UriKind.Absolute);
                     // Try common font family names that might be in the TTF file
-                    string[] possibleNames = { "Minecraft", "Minecraft Regular", "Minecraft-Regular" };
+                    string[] possibleNames = { "Dialogues Latin", "Dialogues_latin", "Dialogues", "Dialogues-Latin" };
                     
                     foreach (var name in possibleNames)
                     {
@@ -41,7 +41,7 @@ namespace VisualNovel.Services
                             var typefaces = fontFamily.GetTypefaces();
                             if (typefaces != null && typefaces.Count > 0)
                             {
-                                _cachedMinecraftFont = fontFamily;
+                                _cachedDialogueFont = fontFamily;
                                 return fontFamily;
                             }
                         }
@@ -55,7 +55,7 @@ namespace VisualNovel.Services
                     if (fontFamily == null)
                     {
                         fontFamily = new FontFamily(fontUri.ToString());
-                        _cachedMinecraftFont = fontFamily;
+                        _cachedDialogueFont = fontFamily;
                         return fontFamily;
                     }
                 }
@@ -69,8 +69,8 @@ namespace VisualNovel.Services
                 {
                     try
                     {
-                        fontFamily = new FontFamily("./Assets/Fonts/#Minecraft");
-                        _cachedMinecraftFont = fontFamily;
+                        fontFamily = new FontFamily("./Assets/Fonts/#Dialogues Latin");
+                        _cachedDialogueFont = fontFamily;
                         return fontFamily;
                     }
                     catch
@@ -79,7 +79,7 @@ namespace VisualNovel.Services
                     }
                 }
                 
-                _cachedMinecraftFont = fontFamily;
+                _cachedDialogueFont = fontFamily;
                 return fontFamily;
             }
             catch
@@ -89,28 +89,32 @@ namespace VisualNovel.Services
         }
 
         /// <summary>
-        /// Loads Minecraft font with Arial as fallback for unsupported characters
-        /// WPF will automatically fallback to system fonts for characters not in Minecraft font
-        /// This method returns Minecraft font, and WPF handles fallback automatically
+        /// Loads Dialogues Latin font with Arial as fallback for unsupported characters
+        /// WPF will automatically fallback to system fonts for characters not in the font
+        /// This method returns Dialogues Latin font, and WPF handles fallback automatically
         /// </summary>
-        public static FontFamily LoadMinecraftFontWithFallback()
+        public static FontFamily LoadDialogueFontWithFallback()
         {
-            if (_cachedMinecraftFontWithFallback != null)
-                return _cachedMinecraftFontWithFallback;
+            if (_cachedDialogueFontWithFallback != null)
+                return _cachedDialogueFontWithFallback;
 
-            var minecraftFont = LoadMinecraftFont();
-            if (minecraftFont != null)
+            var dialogueFont = LoadDialogueFont();
+            if (dialogueFont != null)
             {
                 // WPF automatically falls back to system fonts for unsupported characters
-                // We return the Minecraft font and WPF handles the fallback
-                _cachedMinecraftFontWithFallback = minecraftFont;
-                return minecraftFont;
+                // We return the Dialogues Latin font and WPF handles the fallback
+                _cachedDialogueFontWithFallback = dialogueFont;
+                return dialogueFont;
             }
             
-            // If Minecraft font not available, return Arial
-            _cachedMinecraftFontWithFallback = new FontFamily("Arial");
-            return _cachedMinecraftFontWithFallback;
+            // If Dialogues Latin font not available, return Arial
+            _cachedDialogueFontWithFallback = new FontFamily("Arial");
+            return _cachedDialogueFontWithFallback;
         }
+
+        // Legacy method names for backward compatibility
+        public static FontFamily? LoadMinecraftFont() => LoadDialogueFont();
+        public static FontFamily LoadMinecraftFontWithFallback() => LoadDialogueFontWithFallback();
     }
 }
 

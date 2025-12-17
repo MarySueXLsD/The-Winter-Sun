@@ -10,7 +10,7 @@
         ShowInTaskbar="False"
         KeyDown="Window_KeyDown">
     <Window.Resources>
-        <!-- Minecraft Font Family (will be set programmatically) -->
+        <!-- Dialogues Latin Font Family (will be set programmatically) -->
         <FontFamily x:Key="MinecraftFont">Arial</FontFamily>
         
         <!-- ScrollBar Line Button Style (for up/down arrows) - Must be defined before GameScrollBarStyle -->
@@ -795,12 +795,12 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Slider x:Name="FontSizeSlider" Grid.Column="0" 
-                                       Minimum="16" Maximum="40" Value="28" 
+                                       Minimum="16" Maximum="40" Value="32" 
                                        TickFrequency="1" IsSnapToTickEnabled="True"
                                        Style="{StaticResource GameSliderStyle}"
                                        ValueChanged="FontSizeSlider_ValueChanged"/>
                                 <TextBlock x:Name="FontSizeValue" Grid.Column="1" 
-                                         Text="28" Style="{StaticResource SettingValueStyle}" 
+                                         Text="32" Style="{StaticResource SettingValueStyle}" 
                                          Margin="10,0,0,0"/>
                             </Grid>
 

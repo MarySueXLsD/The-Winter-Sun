@@ -23,15 +23,15 @@ namespace VisualNovel
             _storyService = storyService;
             _soundService = new SoundService();
 
-            // Load Minecraft font
-            var minecraftFont = Services.FontHelper.LoadMinecraftFont();
-            if (minecraftFont != null)
+            // Load Dialogues Latin font
+            var dialogueFont = Services.FontHelper.LoadDialogueFont();
+            if (dialogueFont != null)
             {
-                Resources["MinecraftFont"] = minecraftFont;
+                Resources["MinecraftFont"] = dialogueFont;
                 // Apply font directly to title
-                TitleText.FontFamily = minecraftFont;
+                TitleText.FontFamily = dialogueFont;
                 // Apply font directly to Cancel button
-                CancelButton.FontFamily = minecraftFont;
+                CancelButton.FontFamily = dialogueFont;
             }
 
             // Load custom cursor

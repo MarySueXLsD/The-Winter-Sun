@@ -53,7 +53,7 @@ namespace VisualNovel
             _translationService.LanguageChanged += TranslationService_LanguageChanged;
             
             SetupFpsCounter();
-            LoadMinecraftFont();
+            LoadDialogueFont();
             LoadCustomCursor();
             
             // Apply translations after window is loaded
@@ -647,14 +647,14 @@ namespace VisualNovel
             }
         }
 
-        private void LoadMinecraftFont()
+        private void LoadDialogueFont()
         {
             try
             {
-                // Use FontHelper to load Minecraft font with fallback
-                var fontFamily = FontHelper.LoadMinecraftFontWithFallback();
+                // Use FontHelper to load Dialogues Latin font with fallback
+                var fontFamily = FontHelper.LoadDialogueFontWithFallback();
                         Resources["MinecraftFont"] = fontFamily;
-                LogToFile($"Minecraft font with fallback loaded successfully. Font source: {fontFamily.Source}");
+                LogToFile($"Dialogues Latin font with fallback loaded successfully. Font source: {fontFamily.Source}");
                         
                         // Apply font directly to all text elements
                         Dispatcher.BeginInvoke(new Action(() =>
@@ -671,7 +671,7 @@ namespace VisualNovel
             }
             catch (Exception ex)
             {
-                LogToFile($"Error loading Minecraft font: {ex.Message}");
+                LogToFile($"Error loading Dialogues Latin font: {ex.Message}");
                 LogToFile($"Stack trace: {ex.StackTrace}");
                 Resources["MinecraftFont"] = new FontFamily("Arial");
             }

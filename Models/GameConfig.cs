@@ -11,7 +11,7 @@ namespace VisualNovel.Models
 
         // Text Settings
         public int TextSpeed { get; set; } = 30; // milliseconds per character (lower = faster)
-        public int FontSize { get; set; } = 28;
+        public int FontSize { get; set; } = 32;
         public bool AutoAdvance { get; set; } = false;
         public int AutoAdvanceDelay { get; set; } = 3000; // milliseconds
         public bool SkipUnreadText { get; set; } = true;

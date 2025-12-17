@@ -3,19 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Background="Transparent">
     <UserControl.Resources>
-        <!-- Minecraft Font Family (will be set programmatically) -->
+        <!-- Dialogues Latin Font Family (will be set programmatically) -->
         <FontFamily x:Key="MinecraftFont">Arial</FontFamily>
         
-        <!-- Custom Choice Button Style -->
+        <!-- Post-Soviet Old TV Style Effects -->
+        <DropShadowEffect x:Key="BeigeGlow" Color="#FFD4C4A0" BlurRadius="3" ShadowDepth="0" Opacity="0.4"/>
+        
+        <!-- Custom Choice Button Style - Post-Soviet Style -->
         <Style x:Key="ChoiceButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#AA000000"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderBrush" Value="#FF00FFFF"/>
-            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="#AAD4C4A0"/>
+            <Setter Property="Foreground" Value="#FF8B7355"/>
+            <Setter Property="BorderBrush" Value="#FFD4C4A0"/>
+            <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="Padding" Value="15,12,15,12"/>
             <Setter Property="Margin" Value="0,0,0,10"/>
             <Setter Property="FontFamily" Value="{StaticResource MinecraftFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="24"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -29,10 +32,10 @@
                                BorderThickness="{TemplateBinding BorderThickness}"
                                MinHeight="{TemplateBinding MinHeight}">
                             <Border.Effect>
-                                <DropShadowEffect Color="#FF00FFFF" 
-                                                 BlurRadius="0" 
-                                                 ShadowDepth="2" 
-                                                 Opacity="0.8"/>
+                                <DropShadowEffect Color="#FF8B7355" 
+                                                 BlurRadius="3" 
+                                                 ShadowDepth="1" 
+                                                 Opacity="0.5"/>
                             </Border.Effect>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                              VerticalAlignment="Center"
@@ -40,14 +43,14 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ButtonBorder" Property="Background" Value="#CC008080"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#CCD4C4A0"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="ButtonBorder" Property="Background" Value="#FF00FFFF"/>
-                                <Setter Property="Foreground" Value="#000000"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#FFD4C4A0"/>
+                                <Setter Property="Foreground" Value="#FF2A1A0A"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter TargetName="ButtonBorder" Property="Background" Value="#AA000000"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#AAD4C4A0"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Foreground" Value="#808080"/>
@@ -59,11 +62,11 @@
         </Style>
     </UserControl.Resources>
     
-    <Border Background="#E0000000" BorderBrush="#FF00FFFF" BorderThickness="3" 
+    <Border Background="#FFE8D4B0" BorderBrush="#FFD4C4A0" BorderThickness="3" 
             Padding="20" MaxWidth="600"
             HorizontalAlignment="Center" VerticalAlignment="Center">
         <Border.Effect>
-            <DropShadowEffect Color="#FF00FFFF" BlurRadius="0" ShadowDepth="3" Opacity="0.9"/>
+            <DropShadowEffect Color="#FF8B7355" BlurRadius="8" ShadowDepth="2" Opacity="0.6"/>
         </Border.Effect>
         <StackPanel x:Name="ChoicesContainer">
             <!-- Choices will be added dynamically -->

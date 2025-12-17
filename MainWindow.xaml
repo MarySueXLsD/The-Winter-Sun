@@ -9,7 +9,7 @@
         Loaded="Window_Loaded"
         IsVisibleChanged="Window_IsVisibleChanged">
     <Window.Resources>
-        <!-- Minecraft Font Family (will be overridden programmatically if font file exists) -->
+        <!-- Dialogues Latin Font Family (will be overridden programmatically if font file exists) -->
         <FontFamily x:Key="MinecraftFont">Arial</FontFamily>
         
         <!-- Menu Button Style with Animations -->

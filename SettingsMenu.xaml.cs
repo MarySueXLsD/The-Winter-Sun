@@ -100,14 +100,14 @@ namespace VisualNovel
                 // Window is transparent, so user won't see English text flash
                 try
                 {
-                    // Load Minecraft font with fallback (cached, so very fast)
-                    var minecraftFont = Services.FontHelper.LoadMinecraftFontWithFallback();
-                    Resources["MinecraftFont"] = minecraftFont;
+                    // Load Dialogues Latin font with fallback (cached, so very fast)
+                    var dialogueFont = Services.FontHelper.LoadDialogueFontWithFallback();
+                    Resources["MinecraftFont"] = dialogueFont;
                     // Apply font recursively to ensure all elements get it (backup for elements not using styles)
-                    ApplyFontToChildren(this, minecraftFont);
+                    ApplyFontToChildren(this, dialogueFont);
 
                     // Setup ComboBox font application when dropdowns open
-                    SetupComboBoxFonts(minecraftFont);
+                    SetupComboBoxFonts(dialogueFont);
 
                     // Cache styles for faster tab switching
                     if (Resources.Contains("TabButtonStyle"))

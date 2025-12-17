@@ -17,19 +17,19 @@ namespace VisualNovel.Dialogs
             _soundService = new SoundService();
             _translationService = TranslationService.Instance;
             
-            // Load Minecraft font with fallback
-            var minecraftFont = FontHelper.LoadMinecraftFontWithFallback();
-            Resources["MinecraftFont"] = minecraftFont;
+            // Load Dialogues Latin font with fallback
+            var dialogueFont = FontHelper.LoadDialogueFontWithFallback();
+            Resources["MinecraftFont"] = dialogueFont;
             
             // Apply font directly to text elements
-            DialogTitle.FontFamily = minecraftFont;
-            DialogContent.FontFamily = minecraftFont;
+            DialogTitle.FontFamily = dialogueFont;
+            DialogContent.FontFamily = dialogueFont;
 
             // Apply font to buttons
-            OKButton.FontFamily = minecraftFont;
-            YesButton.FontFamily = minecraftFont;
-            NoButton.FontFamily = minecraftFont;
-            CancelButton.FontFamily = minecraftFont;
+            OKButton.FontFamily = dialogueFont;
+            YesButton.FontFamily = dialogueFont;
+            NoButton.FontFamily = dialogueFont;
+            CancelButton.FontFamily = dialogueFont;
             
             // Load custom cursor
             LoadCustomCursor();

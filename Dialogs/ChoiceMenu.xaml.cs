@@ -17,11 +17,11 @@ namespace VisualNovel
         {
             InitializeComponent();
             
-            // Load Minecraft font
-            var minecraftFont = Services.FontHelper.LoadMinecraftFont();
-            if (minecraftFont != null)
+            // Load Dialogues Latin font
+            var dialogueFont = Services.FontHelper.LoadDialogueFont();
+            if (dialogueFont != null)
             {
-                Resources["MinecraftFont"] = minecraftFont;
+                Resources["MinecraftFont"] = dialogueFont;
             }
         }
 
@@ -52,10 +52,10 @@ namespace VisualNovel
             {
                 Text = $"{choiceNumber}. {choice.Text}",
                 TextWrapping = TextWrapping.Wrap,
-                LineHeight = 20,
+                LineHeight = 28,
                 LineStackingStrategy = LineStackingStrategy.BlockLineHeight,
                 FontFamily = (FontFamily)FindResource("MinecraftFont"),
-                FontSize = 14,
+                FontSize = 24,
                 FontWeight = FontWeights.Bold
             };
 
