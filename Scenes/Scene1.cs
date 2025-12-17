@@ -83,7 +83,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 2
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Narrator",
@@ -92,7 +92,7 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 2
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Narrator",
@@ -101,47 +101,47 @@ namespace VisualNovel.Scenes
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 2
             ));
             
             // Screen darkens
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_LastSteps",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 2
             ));
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_VillageNoise",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 2
             ));
             
             // Background changes to main street
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_MainStreet",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 2
             ));
             dialogues.Add(CreateDialogue(
-                characterId: "Player",
+                characterId: "Narrator",
                 textKey: "Scene1_JourneyText_2",
                 mood: CharacterMood.Normal,
                 spot1: "Player",
                 spot1Facing: "Right",
                 spot1Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 2
             ));
             
             dialogues.Add(CreateDialogue(
@@ -154,7 +154,7 @@ namespace VisualNovel.Scenes
                 spot5: "GirlWithCat",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Sad,
-                cameraZoom: 1.0
+                visibleSlots: 5
             ));
             
             // Mother appears from right on spot 6
@@ -171,7 +171,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 6
             ));
             
             // Mother exits to right, Village Chief appears on spot 4
@@ -191,7 +191,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 6
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "VillageChief",
@@ -209,7 +209,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 6
             ));
             
             // Village Chief dialogue with choices
@@ -229,7 +229,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 6
             );
             villageChiefDialogue.Choices.Add(CreateChoice(
                 _translationService!.GetTranslation("Scene1_Choice_WhoNeedsHelp"),
@@ -267,7 +267,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 6
             ));
             
             dialogues.Add(CreateDialogue(
@@ -286,7 +286,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 6
             ));
             
             dialogues.Add(CreateDialogue(
@@ -305,7 +305,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.0
+                visibleSlots: 6
             ));
             
             dialogues.Add(CreateDialogue(
@@ -321,7 +321,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.3
+                visibleSlots: 3
             ));
             
             // Girl with cat dialogue
@@ -338,7 +338,7 @@ namespace VisualNovel.Scenes
                 spot6: "Mother",
                 spot6Facing: "Right",
                 spot6Mood: CharacterMood.Normal,
-                cameraZoom: 1.3
+                visibleSlots: 3
             ));
             
             // Mother dialogue
@@ -355,7 +355,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Player dialogue - always on spot 1
@@ -372,7 +372,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             dialogues.Add(CreateDialogue(
@@ -388,7 +388,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Player reassures the mother
@@ -405,7 +405,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             dialogues.Add(CreateDialogue(
@@ -421,7 +421,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Player asks about cat - always on spot 1
@@ -438,7 +438,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             dialogues.Add(CreateDialogue(
@@ -454,7 +454,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Narrator",
@@ -469,7 +469,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Girl becomes happy as conversation progresses
@@ -486,7 +486,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "GirlWithCat",
@@ -501,7 +501,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Player asks about mom - player on spot 1, girl on spot4 (closer)
@@ -518,7 +518,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             dialogues.Add(CreateDialogue(
@@ -534,7 +534,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Burn Memory button appears
@@ -551,7 +551,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             );
             burnMemoryDialogue.Choices.Add(CreateChoice(
                 _translationService!.GetTranslation("Scene1_Choice_BurnMemory"),
@@ -574,7 +574,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Narrator",
@@ -589,7 +589,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Narrator",
@@ -604,7 +604,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Girl's reaction after memory burn
@@ -621,7 +621,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Mother dialogue
@@ -638,7 +638,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             dialogues.Add(CreateDialogue(
@@ -654,7 +654,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             dialogues.Add(CreateDialogue(
@@ -670,7 +670,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             dialogues.Add(CreateDialogue(
                 characterId: "Mother",
@@ -685,7 +685,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // Player response
@@ -702,7 +702,7 @@ namespace VisualNovel.Scenes
                 spot5: "Mother",
                 spot5Facing: "Right",
                 spot5Mood: CharacterMood.Normal,
-                cameraZoom: 1.2
+                visibleSlots: 4
             ));
             
             // End of dialogue - player enters hub

@@ -56,6 +56,8 @@ namespace VisualNovel.Scenes
         /// Create a dialogue with explicit character positioning (Spot_1 through Spot_6 style)
         /// Each spot can have a character with a specific mood
         /// </summary>
+        /// <param name="visibleSlots">Number of character slots visible on screen (1-6). 
+        /// 1=zoom 1.5, 2=zoom 1.4, 3=zoom 1.3, 4=zoom 1.2, 5=zoom 1.1, 6=zoom 1.0</param>
         protected DialogueLine CreateDialogue(string characterId, string textKey, CharacterMood mood = CharacterMood.Normal,
             string? spot1 = null, string? spot2 = null, string? spot3 = null, 
             string? spot4 = null, string? spot5 = null, string? spot6 = null,
@@ -63,7 +65,7 @@ namespace VisualNovel.Scenes
             string? spot4Facing = null, string? spot5Facing = null, string? spot6Facing = null,
             CharacterMood? spot1Mood = null, CharacterMood? spot2Mood = null, CharacterMood? spot3Mood = null,
             CharacterMood? spot4Mood = null, CharacterMood? spot5Mood = null, CharacterMood? spot6Mood = null,
-            double? cameraZoom = null, string? backgroundImage = null)
+            int? visibleSlots = null, string? backgroundImage = null)
         {
             if (_translationService == null)
                 _translationService = TranslationService.Instance;
@@ -130,6 +132,9 @@ namespace VisualNovel.Scenes
                 rightFacing = rightmost.facing;
             }
 
+            // Convert visibleSlots to cameraZoom: 1→1.5, 2→1.4, 3→1.3, 4→1.2, 5→1.1, 6→1.0
+            double? cameraZoom = visibleSlots.HasValue ? 1.6 - (visibleSlots.Value * 0.1) : null;
+            
             var dialogue = new DialogueLine
             {
                 CharacterName = character != null 
