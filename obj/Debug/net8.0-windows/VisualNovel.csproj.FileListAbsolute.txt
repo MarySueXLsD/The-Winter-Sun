@@ -42,6 +42,7 @@ C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dia
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dialogs\GameDialog.baml
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\SaveLoadMenu.baml
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\SettingsMenu.baml
+C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\App.baml
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dialogs\ChoiceMenu.g.cs
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\Dialogs\GameDialog.g.cs
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\GameScene.g.cs
@@ -66,4 +67,3 @@ C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\ref
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.pdb
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\VisualNovel.genruntimeconfig.cache
 C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\ref\VisualNovel.dll
-C:\Users\abbig\PycharmProjects\Private\Visual_Novel\obj\Debug\net8.0-windows\App.baml

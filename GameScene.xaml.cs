@@ -1429,11 +1429,26 @@ namespace VisualNovel
                 return;
             }
             
+            // Check if narrator is speaking - narrator should not animate any character
+            string characterName = dialogue.CharacterName.ToLower();
+            if (characterName.Contains("narrator") || characterName.Contains("рассказчик") || 
+                characterName.Contains("оповідач") || characterName.Contains("narrateur"))
+            {
+                // Narrator is speaking, unfocus all characters
+                foreach (var slot in _characterSlots.Values)
+                {
+                    if (slot.border.Visibility == Visibility.Visible)
+                    {
+                        AnimateCharacterFocus(slot.scale, 1.0);
+                    }
+                }
+                return;
+            }
+            
             // Find the speaking character's spot by matching image paths with character name patterns
             int? speakingSpot = null;
             if (dialogue.CharacterSlots != null)
             {
-                string characterName = dialogue.CharacterName.ToLower();
                 
                 foreach (var slot in dialogue.CharacterSlots)
                 {

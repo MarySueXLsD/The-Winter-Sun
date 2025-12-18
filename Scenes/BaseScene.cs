@@ -56,6 +56,7 @@ namespace VisualNovel.Scenes
         /// Create a dialogue with explicit character positioning (Spot_1 through Spot_6 style)
         /// Each spot can have a character with a specific mood
         /// </summary>
+        /// <param name="cameraZoom">Camera zoom level (e.g., 1.0 = zoomed out, 1.5 = zoomed in)</param>
         protected DialogueLine CreateDialogue(string characterId, string textKey, CharacterMood mood = CharacterMood.Normal,
             string? spot1 = null, string? spot2 = null, string? spot3 = null, 
             string? spot4 = null, string? spot5 = null, string? spot6 = null,
