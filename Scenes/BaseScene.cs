@@ -131,6 +131,20 @@ namespace VisualNovel.Scenes
                 rightFacing = rightmost.facing;
             }
 
+            // Find which spot the speaking character (characterId) is at
+            int? speakingCharacterSpot = null;
+            if (character != null && spotAssignments.Count > 0)
+            {
+                foreach (var kvp in spotAssignments)
+                {
+                    if (kvp.Value.charId == characterId)
+                    {
+                        speakingCharacterSpot = kvp.Key;
+                        break;
+                    }
+                }
+            }
+
             var dialogue = new DialogueLine
             {
                 CharacterName = character != null 
@@ -143,6 +157,7 @@ namespace VisualNovel.Scenes
                 CharacterSpotRight = rightmostSpot,
                 CharacterFacingRight = rightFacing,
                 CameraZoom = cameraZoom,
+                SpeakingCharacterSpot = speakingCharacterSpot,
                 CharacterSlots = new List<CharacterSlot>()
             };
 

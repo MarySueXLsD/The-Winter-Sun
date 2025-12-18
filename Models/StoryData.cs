@@ -30,6 +30,9 @@ namespace VisualNovel.Models
         // Multiple character support - list of all characters on screen
         public List<CharacterSlot> CharacterSlots { get; set; } = new List<CharacterSlot>();
         
+        // Speaking character's spot (1-6) - which spot contains the character who is speaking
+        public int? SpeakingCharacterSpot { get; set; }
+        
         // Character positioning (1-6, where 1 is far left, 6 is far right) - backward compatibility
         public int? CharacterSpot { get; set; } // Spot for left character (Malgorzata)
         public string CharacterFacing { get; set; } = "Right"; // "Left" or "Right" for left character

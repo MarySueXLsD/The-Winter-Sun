@@ -36,7 +36,7 @@ namespace VisualNovel
         private int? _currentLeftSpot = null;
         private int? _currentRightSpot = null;
         private GameCamera _camera;
-        private static readonly string LogFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "video_debug.log");
+        private static readonly string LogFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dialogues.log");
         
         // Character slot tracking for multiple characters (by UI slot index 0-5)
         private Dictionary<int, (Border border, Image image, ScaleTransform scale, string? imagePath, int? spot)> _characterSlots = new Dictionary<int, (Border, Image, ScaleTransform, string?, int?)>();
@@ -901,12 +901,38 @@ namespace VisualNovel
 
         private void LoadDialogue(int index)
         {
+            LogToFile($"=== LoadDialogue START: index={index} ===");
+            
+            // Update current dialogue index immediately
+            int previousIndex = _currentDialogueIndex;
+            _currentDialogueIndex = index;
+            LogToFile($"Updated _currentDialogueIndex from {previousIndex} to {index}");
+            
             var dialogue = _storyService.GetDialogue(index);
             if (dialogue == null)
             {
+                LogToFile($"LoadDialogue: Dialogue at index {index} is null, showing end of story");
                 // End of story or invalid index
                 ShowEndOfStory();
                 return;
+            }
+            
+            string textPreview = dialogue.Text != null && dialogue.Text.Length > 50 ? dialogue.Text.Substring(0, 50) + "..." : (dialogue.Text ?? "");
+            LogToFile($"LoadDialogue: Dialogue loaded - CharacterName='{dialogue.CharacterName}', Text='{textPreview}', SpeakingCharacterSpot={dialogue.SpeakingCharacterSpot}, CharacterSlots.Count={dialogue.CharacterSlots?.Count ?? 0}");
+            
+            // Check if any characters are entering (for logging purposes)
+            if (dialogue.CharacterSlots != null && dialogue.CharacterSlots.Count > 0)
+            {
+                foreach (var characterSlot in dialogue.CharacterSlots)
+                {
+                    string characterPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, characterSlot.CharacterImage);
+                    
+                    // Check if this is a new character
+                    if (!_previousSpotCharacters.Values.Contains(characterPath))
+                    {
+                        LogToFile($"New character detected entering: {characterPath}");
+                    }
+                }
             }
 
             // Handle per-dialogue background image changes
@@ -959,15 +985,12 @@ namespace VisualNovel
                 CharacterStatusText.Visibility = Visibility.Collapsed;
             }
             
-            _currentFullText = dialogue.Text;
+            _currentFullText = dialogue.Text ?? "";
             
             _currentCharIndex = 0;
             _isTyping = true;
 
             DialogueText.Text = "";
-
-            bool leftCharacterVisible = false;
-            bool rightCharacterVisible = false;
             
             // Check if we're using the new multiple character system (CharacterSlots)
             if (dialogue.CharacterSlots != null && dialogue.CharacterSlots.Count > 0)
@@ -1141,7 +1164,7 @@ namespace VisualNovel
                     double targetPosition = SpotPositions[newSpot - 1] * windowWidth - (charWidth / 2);
                     targetPosition = Math.Max(0, Math.Min(targetPosition, windowWidth - charWidth));
                     
-                    LogToFile($"Character moving from spot {oldSpot} to spot {newSpot} - animating slot {oldSlotIndex}");
+                    LogToFile($"ANIMATION START: CharacterPosition - from spot={oldSpot} to spot={newSpot}, slotIndex={oldSlotIndex}, targetPosition={targetPosition}, facing={facing}, imagePath={characterPath}");
                     
                     // Update facing direction on the old slot (the one we're animating)
                     bool facingRight = facing.Equals("Right", StringComparison.OrdinalIgnoreCase);
@@ -1211,19 +1234,22 @@ namespace VisualNovel
                             {
                                 // Character is appearing for the first time
                                 bool fromLeft = characterSlot.Spot == 1;
-                                LogToFile($"Character entering at spot {characterSlot.Spot} from {(fromLeft ? "left" : "right")}");
+                                LogToFile($"ANIMATION START: CharacterEntrance - spot={characterSlot.Spot}, slotIndex={slotIndex}, fromLeft={fromLeft}, targetPosition={targetPosition}, imagePath={characterPath}");
                                 AnimateCharacterEntrance(uiSlot.border, targetPosition, fromLeft);
                             }
                             else
                             {
                                 // Character stays at same spot, no animation needed
+                                LogToFile($"Character staying at spot - spot={characterSlot.Spot}, slotIndex={slotIndex}, position={targetPosition}, imagePath={characterPath}");
                                 Canvas.SetLeft(uiSlot.border, targetPosition);
                             }
                             
                             uiSlot.border.Visibility = Visibility.Visible;
+                            LogToFile($"Character visibility set - spot={characterSlot.Spot}, slotIndex={slotIndex}, visible=true");
                             
                             // Update tracking
                             _characterSlots[slotIndex] = (uiSlot.border, uiSlot.image, uiSlot.scale, characterPath, characterSlot.Spot);
+                            LogToFile($"Character slot tracking updated - slotIndex={slotIndex}, spot={characterSlot.Spot}, imagePath={characterPath}");
                         }
                         catch (Exception ex)
                         {
@@ -1281,7 +1307,6 @@ namespace VisualNovel
                                 CharacterImageLeft.Source = new BitmapImage(new Uri(characterPath, UriKind.Absolute));
                             }
                             CharacterImageLeftBorder.Visibility = Visibility.Visible;
-                            leftCharacterVisible = true;
                         }
                         catch (Exception ex)
                         {
@@ -1299,7 +1324,6 @@ namespace VisualNovel
                 {
                     // Same image, just ensure visibility
                     CharacterImageLeftBorder.Visibility = Visibility.Visible;
-                    leftCharacterVisible = true;
                 }
                 }
                 else
@@ -1334,7 +1358,6 @@ namespace VisualNovel
                                 CharacterImageRight.Source = new BitmapImage(new Uri(characterPath, UriKind.Absolute));
                             }
                             CharacterImageRightBorder.Visibility = Visibility.Visible;
-                            rightCharacterVisible = true;
                         }
                         catch (Exception ex)
                         {
@@ -1352,7 +1375,6 @@ namespace VisualNovel
                 {
                     // Same image, just ensure visibility
                     CharacterImageRightBorder.Visibility = Visibility.Visible;
-                    rightCharacterVisible = true;
                 }
             }
                 else
@@ -1362,159 +1384,15 @@ namespace VisualNovel
                 }
             }
 
-            // Determine which character is speaking and apply focus effects
-            // If only one character image is set, that character is speaking
-            // If both are set, we need to determine based on character name or other logic
-            // For now, if CharacterImage is set, left character is speaking; if CharacterImageRight is set, right is speaking
-            bool leftIsSpeaking = leftCharacterVisible && !rightCharacterVisible;
-            bool rightIsSpeaking = rightCharacterVisible && !leftCharacterVisible;
-            
-            // If both are visible, determine by character name (Małgorzata is typically left, Agata is right)
-            if (leftCharacterVisible && rightCharacterVisible)
-            {
-                // Check character name to determine who's speaking
-                if (dialogue.CharacterName.Contains("Małgorzata", StringComparison.OrdinalIgnoreCase) || 
-                    dialogue.CharacterName.Contains("Malgorzata", StringComparison.OrdinalIgnoreCase))
-                {
-                    leftIsSpeaking = true;
-                    rightIsSpeaking = false;
-                }
-                else if (dialogue.CharacterName.Contains("Agata", StringComparison.OrdinalIgnoreCase))
-                {
-                    leftIsSpeaking = false;
-                    rightIsSpeaking = true;
-                }
-                else
-                {
-                    // Default: if CharacterImage is set, left is speaking
-                    leftIsSpeaking = !string.IsNullOrEmpty(dialogue.CharacterImage);
-                    rightIsSpeaking = !leftIsSpeaking;
-                }
-            }
-
             // Position characters based on dialogue settings
+            LogToFile($"Calling PositionCharacters - dialogue.CharacterSlots.Count={dialogue.CharacterSlots?.Count ?? 0}");
             PositionCharacters(dialogue);
-
-            // Apply focus animations
-            if (dialogue.CharacterSlots != null && dialogue.CharacterSlots.Count > 0)
-            {
-                // Use CharacterSlots system - find which character is speaking
-                UpdateCharacterFocusForSlots(dialogue);
-            }
-            else
-            {
-                // Use old left/right system
-                UpdateCharacterFocus(leftIsSpeaking, rightIsSpeaking);
-            }
+            LogToFile($"PositionCharacters completed - visible characters: {string.Join(", ", _characterSlots.Where(kvp => kvp.Value.border.Visibility == Visibility.Visible).Select(kvp => $"slot{kvp.Key}(spot={kvp.Value.spot}, image={Path.GetFileName(kvp.Value.imagePath ?? "")})"))}");
 
             // Start typing animation
+            LogToFile($"Starting typing animation timer");
             _typingTimer.Start();
-        }
-        
-        /// <summary>
-        /// Update character focus for CharacterSlots system - find speaking character by matching image path
-        /// </summary>
-        private void UpdateCharacterFocusForSlots(DialogueLine dialogue)
-        {
-            if (string.IsNullOrEmpty(dialogue.CharacterName))
-            {
-                // No character speaking, unfocus all
-                foreach (var slot in _characterSlots.Values)
-                {
-                    if (slot.border.Visibility == Visibility.Visible)
-                    {
-                        AnimateCharacterFocus(slot.scale, 1.0);
-                    }
-                }
-                return;
-            }
-            
-            // Check if narrator is speaking - narrator should not animate any character
-            string characterName = dialogue.CharacterName.ToLower();
-            if (characterName.Contains("narrator") || characterName.Contains("рассказчик") || 
-                characterName.Contains("оповідач") || characterName.Contains("narrateur"))
-            {
-                // Narrator is speaking, unfocus all characters
-                foreach (var slot in _characterSlots.Values)
-                {
-                    if (slot.border.Visibility == Visibility.Visible)
-                    {
-                        AnimateCharacterFocus(slot.scale, 1.0);
-                    }
-                }
-                return;
-            }
-            
-            // Find the speaking character's spot by matching image paths with character name patterns
-            int? speakingSpot = null;
-            if (dialogue.CharacterSlots != null)
-            {
-                
-                foreach (var slot in dialogue.CharacterSlots)
-                {
-                    string imagePath = slot.CharacterImage.ToLower();
-                    
-                    // Match character name patterns with image path patterns
-                    // Player/MC character - "You", "Вы", "Ви", "Ty"
-                    if ((imagePath.Contains("mc") || imagePath.Contains("player")) && 
-                        (characterName.Contains("player") || characterName.Contains("you") || characterName.Contains("main") || 
-                         characterName.Contains("traveler") || characterName.Contains("вы") || characterName.Contains("ви") || 
-                         characterName.Contains("ty") || characterName.Contains("странник") || characterName.Contains("мандрівник") || 
-                         characterName.Contains("wędrowiec")))
-                    {
-                        speakingSpot = slot.Spot;
-                        break;
-                    }
-                    // Girl/Ada character - match by image path "girl" and various name translations
-                    else if (imagePath.Contains("girl") && 
-                             (characterName.Contains("girl") || characterName.Contains("ada") || characterName.Contains("ада") ||
-                              characterName.Contains("agata") || characterName.Contains("daughter") || characterName.Contains("córka")))
-                    {
-                        speakingSpot = slot.Spot;
-                        break;
-                    }
-                    // Mother character - match by image path "mother" and various name translations
-                    else if (imagePath.Contains("mother") && 
-                             (characterName.Contains("mother") || characterName.Contains("mom") || characterName.Contains("parent") ||
-                              characterName.Contains("мать") || characterName.Contains("мати") || characterName.Contains("matka") ||
-                              characterName.Contains("mama")))
-                    {
-                        speakingSpot = slot.Spot;
-                        break;
-                    }
-                    // Village Chief/Doc character - "Village Chief", "Староста деревни", "Сільський староста", "Sołtys"
-                    else if ((imagePath.Contains("doc") || imagePath.Contains("chief") || imagePath.Contains("village")) && 
-                             (characterName.Contains("chief") || characterName.Contains("village") || characterName.Contains("doctor") ||
-                              characterName.Contains("староста") || characterName.Contains("sołtys") || characterName.Contains("wójt")))
-                    {
-                        speakingSpot = slot.Spot;
-                        break;
-                    }
-                }
-            }
-            
-            // Apply focus to speaking character, unfocus others
-            foreach (var kvp in _characterSlots)
-            {
-                var slot = kvp.Value;
-                
-                if (slot.border.Visibility == Visibility.Visible)
-                {
-                    // Find which spot this slot is currently displaying
-                    int? currentSpot = slot.spot;
-                    
-                    if (currentSpot.HasValue && currentSpot == speakingSpot)
-                    {
-                        // This is the speaking character - focus
-                        AnimateCharacterFocus(slot.scale, 1.05);
-                    }
-                    else
-                    {
-                        // Not speaking - unfocus
-                        AnimateCharacterFocus(slot.scale, 1.0);
-                    }
-                }
-            }
+            LogToFile($"=== LoadDialogue END: index={index} ===");
         }
 
         private void PositionCharacters(DialogueLine dialogue)
@@ -1786,9 +1664,18 @@ namespace VisualNovel
 
             if (onComplete != null)
             {
-                animation.Completed += (s, e) => onComplete();
+                animation.Completed += (s, e) =>
+                {
+                    LogToFile($"ANIMATION COMPLETE: CharacterPosition - targetX={targetX}");
+                    onComplete();
+                };
+            }
+            else
+            {
+                animation.Completed += (s, e) => LogToFile($"ANIMATION COMPLETE: CharacterPosition - targetX={targetX}");
             }
 
+            LogToFile($"ANIMATION BEGIN: CharacterPosition - from={currentX}, to={targetX}, duration=500ms");
             characterBorder.BeginAnimation(Canvas.LeftProperty, animation);
         }
 
@@ -1842,6 +1729,8 @@ namespace VisualNovel
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
             };
 
+            animation.Completed += (s, e) => LogToFile($"ANIMATION COMPLETE: CharacterEntrance - targetX={targetX}, fromLeft={fromLeft}");
+            LogToFile($"ANIMATION BEGIN: CharacterEntrance - from={startX}, to={targetX}, fromLeft={fromLeft}, duration=600ms");
             characterBorder.BeginAnimation(Canvas.LeftProperty, animation);
         }
 
@@ -1888,10 +1777,12 @@ namespace VisualNovel
             
             animation.Completed += (s, e) =>
             {
+                LogToFile($"ANIMATION COMPLETE: CharacterExit - targetX={targetX}");
                 characterBorder.Visibility = Visibility.Collapsed;
                 onComplete?.Invoke();
             };
 
+            LogToFile($"ANIMATION BEGIN: CharacterExit - from={currentX}, to={targetX}, duration=500ms");
             characterBorder.BeginAnimation(Canvas.LeftProperty, animation);
         }
 
@@ -2321,90 +2212,7 @@ namespace VisualNovel
             ChapterTitleLine.Margin = new Thickness(-30, 8, -30, 0);
         }
 
-        private void UpdateCharacterFocus(bool leftIsSpeaking, bool rightIsSpeaking)
-        {
-            // Animate left character
-            if (CharacterImageLeftBorder.Visibility == Visibility.Visible)
-            {
-                if (leftIsSpeaking)
-                {
-                    // Focus: bigger
-                    AnimateCharacterFocus(CharacterImageLeftScale, 1.05);
-                }
-                else
-                {
-                    // Unfocused: normal size
-                    AnimateCharacterFocus(CharacterImageLeftScale, 1.0);
-                }
-            }
 
-            // Animate right character
-            if (CharacterImageRightBorder.Visibility == Visibility.Visible)
-            {
-                if (rightIsSpeaking)
-                {
-                    // Focus: bigger
-                    AnimateCharacterFocus(CharacterImageRightScale, 1.05);
-                }
-                else
-                {
-                    // Unfocused: normal size
-                    AnimateCharacterFocus(CharacterImageRightScale, 1.0);
-                }
-            }
-        }
-
-        private void AnimateCharacterFocus(ScaleTransform scaleTransform, double targetScale)
-        {
-            // Get current scale and flip state
-            double currentScaleX = scaleTransform.ScaleX;
-            bool isFlipped = currentScaleX < 0;
-            
-            try
-            {
-                var config = _configService.GetConfig();
-                
-                // If moving sprites are disabled, just set scale directly
-                if (!config.EnableMovingSprites)
-                {
-                    scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
-                    scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
-                    scaleTransform.ScaleX = isFlipped ? -targetScale : targetScale;
-                    scaleTransform.ScaleY = targetScale;
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                // If config access fails, just set scale directly
-                LogToFile($"Error in AnimateCharacterFocus: {ex.Message}");
-                scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
-                scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
-                scaleTransform.ScaleX = isFlipped ? -targetScale : targetScale;
-                scaleTransform.ScaleY = targetScale;
-                return;
-            }
-            
-            // Animate scale - preserve the X flip direction (facing left/right)
-            // Preserve the facing direction while scaling
-            var scaleXAnimation = new DoubleAnimation
-            {
-                From = currentScaleX,
-                To = isFlipped ? -targetScale : targetScale,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
-            };
-            scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, scaleXAnimation);
-            
-            var scaleYAnimation = new DoubleAnimation
-            {
-                From = scaleTransform.ScaleY,
-                To = targetScale,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
-            };
-            scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleYAnimation);
-        }
 
         private void SetupFpsCounter()
         {
