@@ -18,6 +18,7 @@ namespace VisualNovel
         
         private double _currentZoom = 1.0;
         private List<int> _activeCharacterSpots = new List<int>();
+        private double _defaultPanX = 0.0; // Default pan offset for wider backgrounds
         
         // Character spot positions (1-6, as percentage of screen width from left)
         // Evenly distributed across 6 columns (characters are 550px wide)
@@ -83,14 +84,22 @@ namespace VisualNovel
         }
 
         /// <summary>
+        /// Sets the default pan offset for when no characters are visible (e.g., for wider backgrounds)
+        /// </summary>
+        public void SetDefaultPanOffset(double panX)
+        {
+            _defaultPanX = panX;
+        }
+
+        /// <summary>
         /// Automatically adjusts camera zoom and pan to keep all characters visible
         /// </summary>
         private void AdjustCameraToCharacters()
         {
             if (_activeCharacterSpots.Count == 0)
             {
-                // No characters, reset to default
-                AnimateZoomAndPan(1.0, 0);
+                // No characters, reset to default (which may include centering on wider background)
+                AnimateZoomAndPan(1.0, _defaultPanX);
                 return;
             }
 
@@ -256,6 +265,38 @@ namespace VisualNovel
             return _characterContainer.ActualWidth > 0 ? _characterContainer.ActualWidth : 
                    (_cameraContainer.ActualWidth > 0 ? _cameraContainer.ActualWidth : 
                    (_window.ActualWidth > 0 ? _window.ActualWidth : System.Windows.SystemParameters.PrimaryScreenWidth));
+        }
+
+        /// <summary>
+        /// Centers the camera on a wider background image
+        /// </summary>
+        public void CenterOnBackgroundImage(double imagePixelWidth, double imagePixelHeight, double viewportWidth, double viewportHeight)
+        {
+            // Calculate the aspect ratios
+            double imageAspectRatio = imagePixelWidth / imagePixelHeight;
+            double viewportAspectRatio = viewportWidth / viewportHeight;
+
+            // With UniformToFill, the image is scaled to fill the viewport while maintaining aspect ratio
+            // If image is wider than viewport aspect ratio, it will be cropped on the sides
+            if (imageAspectRatio > viewportAspectRatio)
+            {
+                // Image is wider - calculate how much wider the rendered image is than the viewport
+                // The image is scaled to fill the height, so: renderedWidth = viewportHeight * imageAspectRatio
+                double renderedWidth = viewportHeight * imageAspectRatio;
+                double excessWidth = renderedWidth - viewportWidth;
+                
+                // Pan to center: move left by half the excess width
+                // Negative pan moves left, positive moves right
+                double panX = -excessWidth / 2.0;
+                
+                // Animate to center position with zoom at 1.0
+                AnimateZoomAndPan(1.0, panX);
+            }
+            else
+            {
+                // Image is not wider, reset to default position
+                AnimateZoomAndPan(1.0, 0);
+            }
         }
     }
 }

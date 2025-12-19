@@ -12100,3 +12100,177 @@
 [2025-12-18 23:38:02.750] OnActivated: Source is null, attempting to load video
 [2025-12-18 23:38:02.751] Background video not found (deprecated), using background image instead
 [2025-12-18 23:38:02.751] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:42:56.750] Dialogues Latin font with fallback loaded successfully. Font source: ./#Dialogues Latin
+[2025-12-19 11:42:56.771] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-19 11:42:56.989] Window became visible!
+[2025-12-19 11:42:57.165] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:42:57.167] Background video not found (deprecated), using background image instead
+[2025-12-19 11:42:57.365] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:42:57.509] Window_Loaded event fired!
+[2025-12-19 11:42:57.510] Background video not found (deprecated), using background image instead
+[2025-12-19 11:42:57.512] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:42:57.524] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:42:57.526] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:42:57.992] Background video not found (deprecated), using background image instead
+[2025-12-19 11:42:57.993] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:42:57.995] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:42:57.995] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:42:57.998] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-19 11:42:57.999] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-19 11:42:57.999] Background video not found (deprecated), using background image instead
+[2025-12-19 11:42:58.000] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:42:58.002] Background video not found (deprecated), using background image instead
+[2025-12-19 11:42:58.003] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:42:58.031] OnContentRendered: Source is null, attempting to load video
+[2025-12-19 11:42:58.032] Background video not found (deprecated), using background image instead
+[2025-12-19 11:42:58.033] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:02.479] AnimatedChromaKeyImage: Pre-loaded 301 frames in 4829ms
+[2025-12-19 11:43:17.858] AnimatedChromaKeyImage: FramesPath changed to: Assets\Videos\snow-falling-ambient-frames
+[2025-12-19 11:43:17.862] AnimatedChromaKeyImage: Loading frames from: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Videos\snow-falling-ambient-frames
+[2025-12-19 11:43:17.863] AnimatedChromaKeyImage: Using 301 cached frames (took 1ms)
+[2025-12-19 11:43:17.864] AnimatedChromaKeyImage: Animation started at 30 FPS with 301 frames
+[2025-12-19 11:43:18.977] AnimatedChromaKeyImage: Animation started at 30 FPS with 301 frames
+[2025-12-19 11:43:19.124] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:43:19.125] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:19.126] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.020] Dialogues Latin font with fallback loaded successfully. Font source: ./#Dialogues Latin
+[2025-12-19 11:43:33.022] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-19 11:43:33.042] Window became visible!
+[2025-12-19 11:43:33.062] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:43:33.062] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.063] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.094] Window_Loaded event fired!
+[2025-12-19 11:43:33.095] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.095] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.097] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:43:33.099] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:43:33.146] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.147] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.148] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:43:33.149] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:43:33.150] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-19 11:43:33.151] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-19 11:43:33.151] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.152] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.153] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.154] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.180] OnContentRendered: Source is null, attempting to load video
+[2025-12-19 11:43:33.181] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.182] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.319] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:43:33.322] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:43:33.323] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:43:33.323] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.336] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.540] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:43:33.540] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:43:33.540] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:43:33.541] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.542] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.733] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:43:33.733] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:43:33.733] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:43:33.734] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.734] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:33.960] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:43:33.960] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:43:33.961] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:43:33.961] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:33.962] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:34.162] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:43:34.163] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:43:34.163] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:43:34.163] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:34.164] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:43:34.864] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:43:34.865] Background video not found (deprecated), using background image instead
+[2025-12-19 11:43:34.866] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:02.224] Dialogues Latin font with fallback loaded successfully. Font source: ./#Dialogues Latin
+[2025-12-19 11:49:02.250] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-19 11:49:02.418] Window became visible!
+[2025-12-19 11:49:02.577] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:49:02.580] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:02.751] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:02.896] Window_Loaded event fired!
+[2025-12-19 11:49:02.897] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:02.898] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:02.914] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:02.916] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:03.220] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:03.221] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:03.222] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:03.223] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:03.226] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-19 11:49:03.227] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-19 11:49:03.227] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:03.228] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:03.231] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:03.232] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:03.316] OnContentRendered: Source is null, attempting to load video
+[2025-12-19 11:49:03.317] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:03.318] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:04.274] AnimatedChromaKeyImage: FramesPath changed to: Assets\Videos\snow-falling-ambient-frames
+[2025-12-19 11:49:04.284] AnimatedChromaKeyImage: Loading frames from: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Videos\snow-falling-ambient-frames
+[2025-12-19 11:49:04.287] AnimatedChromaKeyImage: Found 301 frames, loading progressively...
+[2025-12-19 11:49:04.929] AnimatedChromaKeyImage: First frame displayed in 644ms
+[2025-12-19 11:49:06.521] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:49:06.524] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:06.525] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:09.633] AnimatedChromaKeyImage: Pre-loaded 301 frames in 6675ms
+[2025-12-19 11:49:11.290] AnimatedChromaKeyImage: Loaded and processed 301 frames in 7006ms
+[2025-12-19 11:49:11.291] AnimatedChromaKeyImage: Animation started at 30 FPS with 301 frames
+[2025-12-19 11:49:30.134] Dialogues Latin font with fallback loaded successfully. Font source: ./#Dialogues Latin
+[2025-12-19 11:49:30.136] Custom cursor loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\AOM_Titans Cursor.cur
+[2025-12-19 11:49:30.153] Window became visible!
+[2025-12-19 11:49:30.172] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:49:30.173] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.173] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:30.202] Window_Loaded event fired!
+[2025-12-19 11:49:30.203] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.204] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:30.206] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:30.207] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:30.281] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.282] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:30.284] Background music 1 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\autumn_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:30.284] Background music 2 loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Music\city_ambient.mp3 at volume 0.0885
+[2025-12-19 11:49:30.289] Window_IsVisibleChanged: Source is null: True, IsVideoLoaded: False, IsLoading: False
+[2025-12-19 11:49:30.290] Window_IsVisibleChanged: Source is null, loading video
+[2025-12-19 11:49:30.290] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.292] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:30.295] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.296] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:30.334] OnContentRendered: Source is null, attempting to load video
+[2025-12-19 11:49:30.335] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.336] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:30.634] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:49:30.637] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:49:30.637] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:49:30.638] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.639] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:30.863] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:49:30.864] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:49:30.864] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:49:30.864] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:30.865] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:31.064] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:49:31.064] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:49:31.065] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:49:31.065] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:31.066] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:31.690] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:49:31.691] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:49:31.691] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:49:31.692] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:31.692] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:31.910] LoadVideoIfNeeded called. Source is null: True, IsLoading: False, IsVideoLoaded: False
+[2025-12-19 11:49:31.911] MediaElement Visibility: Collapsed, IsLoaded: True
+[2025-12-19 11:49:31.911] Calling LoadVideo() from LoadVideoIfNeeded
+[2025-12-19 11:49:31.912] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:31.913] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:36.022] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:49:36.023] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:36.024] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png
+[2025-12-19 11:49:39.057] OnActivated: Source is null, attempting to load video
+[2025-12-19 11:49:39.058] Background video not found (deprecated), using background image instead
+[2025-12-19 11:49:39.059] Background image loaded: C:\Users\abbig\PycharmProjects\Private\Visual_Novel\bin\Debug\net8.0-windows\Assets\Images\main_menu_background.png

@@ -463,8 +463,59 @@ namespace VisualNovel
             {
                 try
                 {
-                    BackgroundImage.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(backgroundPath, UriKind.Absolute));
+                    var bitmap = new System.Windows.Media.Imaging.BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(backgroundPath, UriKind.Absolute);
+                    bitmap.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                    bitmap.EndInit();
+                    
+                    // Get image dimensions
+                    double imageWidth = bitmap.PixelWidth;
+                    double imageHeight = bitmap.PixelHeight;
+                    
+                    BackgroundImage.Source = bitmap;
                     BackgroundImage.Visibility = Visibility.Visible;
+                    
+                    // Center camera on wider image after window is loaded
+                    // Wait for window to be ready so we can get accurate viewport dimensions
+                    this.Loaded += (s, e) =>
+                    {
+                        Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            if (_camera != null && BackgroundImage.Source != null)
+                            {
+                                double viewportWidth = CameraContainer.ActualWidth > 0 ? CameraContainer.ActualWidth : this.ActualWidth;
+                                double viewportHeight = CameraContainer.ActualHeight > 0 ? CameraContainer.ActualHeight : this.ActualHeight;
+                                
+                                if (viewportWidth > 0 && viewportHeight > 0)
+                                {
+                                    // Calculate the pan offset needed to center the wider image
+                                    double imageAspectRatio = imageWidth / imageHeight;
+                                    double viewportAspectRatio = viewportWidth / viewportHeight;
+                                    
+                                    if (imageAspectRatio > viewportAspectRatio)
+                                    {
+                                        // Image is wider - calculate pan to center
+                                        double renderedWidth = viewportHeight * imageAspectRatio;
+                                        double excessWidth = renderedWidth - viewportWidth;
+                                        double panX = -excessWidth / 2.0;
+                                        
+                                        // Set this as the default pan offset for when no characters are visible
+                                        _camera.SetDefaultPanOffset(panX);
+                                        
+                                        // Apply the centering now
+                                        _camera.CenterOnBackgroundImage(imageWidth, imageHeight, viewportWidth, viewportHeight);
+                                        LogToFile($"Centered camera on background image: {Path.GetFileName(backgroundPath)} (Image: {imageWidth}x{imageHeight}, Viewport: {viewportWidth}x{viewportHeight}, Pan: {panX})");
+                                    }
+                                    else
+                                    {
+                                        // Image is not wider, reset default pan to 0
+                                        _camera.SetDefaultPanOffset(0);
+                                    }
+                                }
+                            }
+                        }), System.Windows.Threading.DispatcherPriority.Loaded);
+                    };
                 }
                 catch (Exception ex)
                 {
